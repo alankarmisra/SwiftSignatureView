@@ -142,16 +142,11 @@ public class SwiftSignatureView: UIView {
         }
     }
     
-    func distance(pt1:CGPoint, pt2:CGPoint) -> CGFloat {
+    private func distance(pt1:CGPoint, pt2:CGPoint) -> CGFloat {
         return sqrt((pt1.x - pt2.x)*(pt1.x - pt2.x) + (pt1.y - pt2.y)*(pt1.y - pt2.y))
     }
     
-    func linearVelocity(velocity:CGPoint)->CGFloat {
-        return sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
-    }
-    
-    
-    func CGPointMid(#p0:CGPoint, p1:CGPoint)->CGPoint {
+    private func CGPointMid(#p0:CGPoint, p1:CGPoint)->CGPoint {
         return CGPointMake((p0.x+p1.x)/2.0, (p0.y+p1.y)/2.0)
     }
     
