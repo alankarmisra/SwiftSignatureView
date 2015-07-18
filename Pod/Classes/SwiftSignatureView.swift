@@ -4,13 +4,17 @@
 //
 //  Created by Alankar Misra on 6/23/15.
 //
-// SwiftSignatureView is available under the MIT license. See the LICENSE file for more info.
+//  SwiftSignatureView is available under the MIT license. See the LICENSE file for more info.
 
 import UIKit
 
+/// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
 public class SwiftSignatureView: UIView {
-
     // MARK: Public Properties
+    
+    /**
+    The maximum stroke width.
+    */
     @IBInspectable public var maximumStrokeWidth:CGFloat = 4 {
         didSet {
             if(maximumStrokeWidth < minimumStrokeWidth || maximumStrokeWidth <= 0) {
@@ -18,7 +22,10 @@ public class SwiftSignatureView: UIView {
             }
         }
     }
-    
+
+    /**
+    The minimum stroke width.
+    */
     @IBInspectable public var minimumStrokeWidth:CGFloat = 1 {
         didSet {
             if(minimumStrokeWidth > maximumStrokeWidth || minimumStrokeWidth <= 0) {
@@ -27,8 +34,14 @@ public class SwiftSignatureView: UIView {
         }
     }
     
+    /**
+    The stroke color.
+    */
     @IBInspectable public var strokeColor:UIColor = UIColor.blackColor()
     
+    /**
+    The stroke alpha. Prefer higher values to prevent stroke segments from showing through.
+    */
     @IBInspectable public var strokeAlpha:CGFloat = 1.0 {
         didSet {
             if(strokeAlpha <= 0.0 || strokeAlpha > 1.0) {
@@ -37,7 +50,10 @@ public class SwiftSignatureView: UIView {
         }
     }
     
-    public var signature:UIImage?
+    /**
+    The UIImage representation of the signature. Read only.
+    */
+    private(set) public var signature:UIImage?
     
     // MARK: Public Methods
     public func clear() {

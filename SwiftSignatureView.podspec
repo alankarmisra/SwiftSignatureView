@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftSignatureView"
-  s.version          = "0.0.2"
+  s.version          = "0.0.3"
   s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app."
   s.description      = <<-DESC
                        SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage. 
