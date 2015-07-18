@@ -210,6 +210,9 @@ public class SwiftSignatureView: UIView {
     
     private func drawPointAt(point:CGPoint, pointSize:CGFloat = 1.0) {
         let path = UIBezierPath()
+        let signatureColor = strokeColor.colorWithAlphaComponent(strokeAlpha)
+        signatureColor.setStroke()
+        
         path.lineWidth = pointSize
         path.lineCapStyle = kCGLineCapRound
         path.moveToPoint(point)
