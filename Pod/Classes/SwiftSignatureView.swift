@@ -65,13 +65,8 @@ public class SwiftSignatureView: UIView {
     }    
     
     // MARK: Private Methods
-    private struct CGPointPair {
-        var p0:CGPoint
-        var p1:CGPoint
-    }
-    
-    private var previousPoint:CGPoint = CGPointZero
-    private var previousEndPoint:CGPoint = CGPointZero
+    private var previousPoint = CGPointZero
+    private var previousEndPoint = CGPointZero
     private var previousWidth:CGFloat = 0.0
     
     required public init(coder aDecoder: NSCoder) {
@@ -154,7 +149,7 @@ public class SwiftSignatureView: UIView {
         signature?.drawInRect(rect)
     }
     
-    private func getOffsetPoints(#p0:CGPoint, p1:CGPoint, width:CGFloat) -> CGPointPair {
+    private func getOffsetPoints(#p0:CGPoint, p1:CGPoint, width:CGFloat) -> (p0:CGPoint, p1:CGPoint) {
         let pi_by_2:CGFloat = 3.14/2
         let delta = width/2.0
         let v0 = p1.x - p0.x
@@ -171,13 +166,7 @@ public class SwiftSignatureView: UIView {
         let du0 = delta * ru0
         let du1 = delta * ru1
         
-        // return the end points of the perpendicular with length delta
-        let pair = CGPointPair(
-            p0: CGPoint(x: p0.x+du0, y: p0.y+du1),
-            p1: CGPoint(x: p0.x-du0, y: p0.y-du1)
-        )
-        
-        return pair
+        return (CGPoint(x: p0.x+du0, y: p0.y+du1),CGPoint(x: p0.x-du0, y: p0.y-du1))
     }
     
     private func drawQuadCurve(start:CGPoint, control:CGPoint, end:CGPoint, startWidth:CGFloat, endWidth:CGFloat) {
@@ -186,9 +175,9 @@ public class SwiftSignatureView: UIView {
             let context = UIGraphicsGetCurrentContext()
             let controlWidth = (startWidth+endWidth)/2.0
             
-            let startOffsets:CGPointPair = getOffsetPoints(p0: start, p1: control, width: startWidth)
-            let controlOffsets:CGPointPair = getOffsetPoints(p0: control, p1: start, width: controlWidth)
-            let endOffsets:CGPointPair = getOffsetPoints(p0: end, p1: control, width: endWidth)
+            let startOffsets = getOffsetPoints(p0: start, p1: control, width: startWidth)
+            let controlOffsets = getOffsetPoints(p0: control, p1: start, width: controlWidth)
+            let endOffsets = getOffsetPoints(p0: end, p1: control, width: endWidth)
             
             path.moveToPoint(startOffsets.p0)
             path.addQuadCurveToPoint(endOffsets.p1, controlPoint: controlOffsets.p1)
