@@ -9,7 +9,8 @@
 import UIKit
 
 public class SwiftSignatureView: UIView {
-    
+
+    // MARK: Public Properties
     @IBInspectable public var maximumStrokeWidth:CGFloat = 4 {
         didSet {
             if(maximumStrokeWidth < minimumStrokeWidth || maximumStrokeWidth <= 0) {
@@ -38,14 +39,16 @@ public class SwiftSignatureView: UIView {
     
     public var signature:UIImage?
     
+    // MARK: Public Methods
     public func clear() {
-        var rect = self.frame
+        let rect = self.frame
         UIGraphicsBeginImageContext(rect.size)
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
     }    
     
+    // MARK: Private Methods
     private struct CGPointPair {
         var p0:CGPoint
         var p1:CGPoint
@@ -68,15 +71,15 @@ public class SwiftSignatureView: UIView {
     }
     
     func tap(tap:UITapGestureRecognizer) {
-        var rect = self.frame
+        let rect = self.frame
         
         UIGraphicsBeginImageContext(rect.size)
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         if(signature == nil) {
             signature = UIGraphicsGetImageFromCurrentImageContext()
         }
         signature?.drawInRect(rect)
-        var currentPoint = tap.locationInView(self)
+        let currentPoint = tap.locationInView(self)
         drawPointAt(currentPoint, pointSize: 5.0)
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -92,9 +95,9 @@ public class SwiftSignatureView: UIView {
             var currentPoint = pan.locationInView(self)
             var strokeLength = distance(previousPoint, pt2: currentPoint)
             if(strokeLength >= 1.0) {
-                var rect = self.frame
+                let rect = self.frame
                 UIGraphicsBeginImageContext(rect.size)
-                var context = UIGraphicsGetCurrentContext()
+                let context = UIGraphicsGetCurrentContext()
                 if(signature == nil) {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
@@ -102,11 +105,11 @@ public class SwiftSignatureView: UIView {
                 signature?.drawInRect(rect)
                 
                 
-                var currentVelocity = pan.velocityInView(self)
-                var delta:CGFloat = 0.5
-                let strokeScale:CGFloat = 50
-                var currentWidth = max(minimumStrokeWidth,min(maximumStrokeWidth, 1/strokeLength*strokeScale*delta + previousWidth*(1-delta)))
-                var midPoint = CGPointMid(p0:currentPoint, p1:previousPoint)
+                let currentVelocity = pan.velocityInView(self)
+                let delta:CGFloat = 0.5
+                let strokeScale:CGFloat = 50 // fudge factor based on empirical tests
+                let currentWidth = max(minimumStrokeWidth,min(maximumStrokeWidth, 1/strokeLength*strokeScale*delta + previousWidth*(1-delta)))
+                let midPoint = CGPointMid(p0:currentPoint, p1:previousPoint)
                 
                 drawQuadCurve(previousEndPoint, control: previousPoint, end: midPoint, startWidth:previousWidth, endWidth: currentWidth)
                 
@@ -169,8 +172,8 @@ public class SwiftSignatureView: UIView {
     private func drawQuadCurve(start:CGPoint, control:CGPoint, end:CGPoint, startWidth:CGFloat, endWidth:CGFloat) {
         if(start != control) {
             var path = UIBezierPath()
-            var context = UIGraphicsGetCurrentContext()
-            var controlWidth = (startWidth+endWidth)/2.0
+            let context = UIGraphicsGetCurrentContext()
+            let controlWidth = (startWidth+endWidth)/2.0
             
             let startOffsets:CGPointPair = getOffsetPoints(p0: start, p1: control, width: startWidth)
             let controlOffsets:CGPointPair = getOffsetPoints(p0: control, p1: start, width: controlWidth)
