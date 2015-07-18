@@ -3,8 +3,8 @@
 //  SwiftSignatureView
 //
 //  Created by Alankar Misra on 6/23/15.
-//  Copyright (c) 2015 Digital Sutras. All rights reserved.
 //
+// SwiftSignatureView is available under the MIT license. See the LICENSE file for more info.
 
 import UIKit
 
@@ -38,6 +38,14 @@ public class SwiftSignatureView: UIView {
     
     public var signature:UIImage?
     
+    public func clear() {
+        var rect = self.frame
+        UIGraphicsBeginImageContext(rect.size)
+        signature = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.setNeedsDisplay()
+    }    
+    
     private struct CGPointPair {
         var p0:CGPoint
         var p1:CGPoint
@@ -57,14 +65,6 @@ public class SwiftSignatureView: UIView {
         pan.minimumNumberOfTouches = 1
         pan.maximumNumberOfTouches = 1
         self.addGestureRecognizer(pan)
-    }
-    
-    public func clear() {
-        var rect = self.frame
-        UIGraphicsBeginImageContext(rect.size)
-        signature = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.setNeedsDisplay()
     }
     
     func tap(tap:UITapGestureRecognizer) {

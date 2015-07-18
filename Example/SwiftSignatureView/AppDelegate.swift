@@ -3,8 +3,8 @@
 //  SwiftSignatureView
 //
 //  Created by Alankar Misra on 07/17/2015.
-//  Copyright (c) 2015 Alankar Misra. All rights reserved.
 //
+// SwiftSignatureView is available under the MIT license. See the LICENSE file for more info.
 
 import UIKit
 
