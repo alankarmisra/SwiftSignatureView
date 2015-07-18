@@ -8,11 +8,11 @@
 ## Description
 SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage.
 
+![Sample](http://i.imgur.com/dnXs4ND.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
