@@ -8,5 +8,5 @@ end
 target 'SwiftSignatureView_Tests', :exclusive => true do
   pod "SwiftSignatureView", :path => "../"
 
-  pod 'FBSnapshotTestCase'
+  
 end

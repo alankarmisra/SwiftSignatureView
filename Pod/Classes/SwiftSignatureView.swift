@@ -22,7 +22,7 @@ public class SwiftSignatureView: UIView {
             }
         }
     }
-
+    
     /**
     The minimum stroke width.
     */
@@ -62,14 +62,14 @@ public class SwiftSignatureView: UIView {
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
-    }    
+    }
     
     // MARK: Private Methods
     private var previousPoint = CGPointZero
     private var previousEndPoint = CGPointZero
     private var previousWidth:CGFloat = 0.0
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
@@ -85,7 +85,6 @@ public class SwiftSignatureView: UIView {
         let rect = self.frame
         
         UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
         if(signature == nil) {
             signature = UIGraphicsGetImageFromCurrentImageContext()
         }
@@ -103,20 +102,17 @@ public class SwiftSignatureView: UIView {
             previousPoint = pan.locationInView(self)
             previousEndPoint = previousPoint
         case .Changed:
-            var currentPoint = pan.locationInView(self)
-            var strokeLength = distance(previousPoint, pt2: currentPoint)
+            let currentPoint = pan.locationInView(self)
+            let strokeLength = distance(previousPoint, pt2: currentPoint)
             if(strokeLength >= 1.0) {
                 let rect = self.frame
                 UIGraphicsBeginImageContext(rect.size)
-                let context = UIGraphicsGetCurrentContext()
                 if(signature == nil) {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
                 // Draw the prior signature
                 signature?.drawInRect(rect)
                 
-                
-                let currentVelocity = pan.velocityInView(self)
                 let delta:CGFloat = 0.5
                 let strokeScale:CGFloat = 50 // fudge factor based on empirical tests
                 let currentWidth = max(minimumStrokeWidth,min(maximumStrokeWidth, 1/strokeLength*strokeScale*delta + previousWidth*(1-delta)))
@@ -141,7 +137,7 @@ public class SwiftSignatureView: UIView {
         return sqrt((pt1.x - pt2.x)*(pt1.x - pt2.x) + (pt1.y - pt2.y)*(pt1.y - pt2.y))
     }
     
-    private func CGPointMid(#p0:CGPoint, p1:CGPoint)->CGPoint {
+    private func CGPointMid(p0 p0:CGPoint, p1:CGPoint)->CGPoint {
         return CGPointMake((p0.x+p1.x)/2.0, (p0.y+p1.y)/2.0)
     }
     
@@ -149,7 +145,7 @@ public class SwiftSignatureView: UIView {
         signature?.drawInRect(rect)
     }
     
-    private func getOffsetPoints(#p0:CGPoint, p1:CGPoint, width:CGFloat) -> (p0:CGPoint, p1:CGPoint) {
+    private func getOffsetPoints(p0 p0:CGPoint, p1:CGPoint, width:CGFloat) -> (p0:CGPoint, p1:CGPoint) {
         let pi_by_2:CGFloat = 3.14/2
         let delta = width/2.0
         let v0 = p1.x - p0.x
@@ -171,8 +167,7 @@ public class SwiftSignatureView: UIView {
     
     private func drawQuadCurve(start:CGPoint, control:CGPoint, end:CGPoint, startWidth:CGFloat, endWidth:CGFloat) {
         if(start != control) {
-            var path = UIBezierPath()
-            let context = UIGraphicsGetCurrentContext()
+            let path = UIBezierPath()
             let controlWidth = (startWidth+endWidth)/2.0
             
             let startOffsets = getOffsetPoints(p0: start, p1: control, width: startWidth)
@@ -190,8 +185,8 @@ public class SwiftSignatureView: UIView {
             signatureColor.setStroke()
             
             path.lineWidth = 1
-            path.lineJoinStyle = kCGLineJoinRound
-            path.lineCapStyle = kCGLineCapRound
+            path.lineJoinStyle = CGLineJoin.Round
+            path.lineCapStyle = CGLineCap.Round
             path.stroke()
             path.fill()
         }
@@ -203,7 +198,7 @@ public class SwiftSignatureView: UIView {
         signatureColor.setStroke()
         
         path.lineWidth = pointSize
-        path.lineCapStyle = kCGLineCapRound
+        path.lineCapStyle = CGLineCap.Round
         path.moveToPoint(point)
         path.addLineToPoint(point)
         path.stroke()

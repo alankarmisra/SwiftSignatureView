@@ -1,13 +1,7 @@
 PODS:
-  - FBSnapshotTestCase (2.0.2):
-    - FBSnapshotTestCase/SwiftSupport (= 2.0.2)
-  - FBSnapshotTestCase/Core (2.0.2)
-  - FBSnapshotTestCase/SwiftSupport (2.0.2):
-    - FBSnapshotTestCase/Core
   - SwiftSignatureView (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - SwiftSignatureView (from `../`)
 
 EXTERNAL SOURCES:
@@ -15,7 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: fd500d5b282c4ec60215d26d0b58b0cf271dd0d6
-  SwiftSignatureView: 41fe35863879a6948aa1646e7db58f5029f4f179
+  SwiftSignatureView: db3a9632c464d1c341a7f2ddaf935a6aeea6068a
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

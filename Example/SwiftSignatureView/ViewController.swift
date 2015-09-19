@@ -10,7 +10,7 @@ import UIKit
 import SwiftSignatureView
 
 public class ViewController: UIViewController {
-
+    
     
     @IBOutlet weak var signatureView: SwiftSignatureView!
     // Use signatureView.signature to get at the signature image
@@ -19,6 +19,6 @@ public class ViewController: UIViewController {
     @IBAction func didTapClear(sender: AnyObject) {
         signatureView.clear()
     }
-
+    
 }
 

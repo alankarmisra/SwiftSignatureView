@@ -1,6 +1,0 @@
-framework module SwiftSignatureView {
-  umbrella header "Pods-SwiftSignatureView_Example-SwiftSignatureView-umbrella.h"
-
-  export *
-  module * { export * }
-}

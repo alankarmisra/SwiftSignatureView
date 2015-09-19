@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,51 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-pv-9cR" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWx-Y3-ll7" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8T-hD-4bD">
-                                        <rect key="frame" x="282" y="562" width="37" height="30"/>
-                                        <state key="normal" title="Clear">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBO-ga-7c4">
+                                        <rect key="frame" x="282" y="562" width="36" height="30"/>
+                                        <state key="normal" title="Clear"/>
                                         <connections>
-                                            <action selector="didTapClear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="17N-GS-XEb"/>
+                                            <action selector="didTapClear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DdP-Pi-0dL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="h8T-hD-4bD" firstAttribute="centerX" secondItem="9AT-pv-9cR" secondAttribute="centerX" id="FpB-yV-JSE"/>
-                                    <constraint firstItem="h8T-hD-4bD" firstAttribute="bottom" secondItem="9AT-pv-9cR" secondAttribute="bottomMargin" id="V16-rH-CNE"/>
+                                    <constraint firstAttribute="bottom" secondItem="yBO-ga-7c4" secondAttribute="bottom" constant="8" id="1OP-bE-L0P"/>
+                                    <constraint firstItem="yBO-ga-7c4" firstAttribute="centerX" secondItem="WWx-Y3-ll7" secondAttribute="centerX" id="cu6-fX-VHb"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumStrokeWidth">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumStrokeWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                        <color key="value" red="0.098764515315159604" green="0.14417646719123925" blue="0.33794981060606055" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9AT-pv-9cR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Qf2-Vo-h5v"/>
-                            <constraint firstItem="9AT-pv-9cR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="YwL-bk-Koj"/>
-                            <constraint firstAttribute="trailing" secondItem="9AT-pv-9cR" secondAttribute="trailing" id="hbv-Li-hJd"/>
-                            <constraint firstItem="9AT-pv-9cR" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="uLF-cV-JQh"/>
+                            <constraint firstAttribute="trailing" secondItem="WWx-Y3-ll7" secondAttribute="trailing" id="7EM-TQ-1aN"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="H6h-Cd-Uok"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="HSq-c2-K2N"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ifK-c5-lkP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="signatureView" destination="9AT-pv-9cR" id="A1V-5R-0vp"/>
+                        <outlet property="signatureView" destination="WWx-Y3-ll7" id="egY-uO-3Sl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="423" y="303"/>
         </scene>
     </scenes>
 </document>

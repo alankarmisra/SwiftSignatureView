@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_SwiftSignatureView_Example_SwiftSignatureView : NSObject
-@end
-@implementation PodsDummy_Pods_SwiftSignatureView_Example_SwiftSignatureView
-@end

@@ -1,4 +1,4 @@
-# SwiftSignatureView
+# SwiftSignatureView (Swift 2.0 / XCode 7 compatible)
 
 [![CI Status](http://img.shields.io/travis/Alankar Misra/SwiftSignatureView.svg?style=flat)](https://travis-ci.org/Alankar Misra/SwiftSignatureView)
 [![Version](https://img.shields.io/cocoapods/v/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
@@ -40,6 +40,7 @@ SwiftSignatureView is available through [CocoaPods](http://cocoapods.org). To in
 it, simply add the following line to your Podfile:
 
 ```ruby
+use_frameworks!
 pod "SwiftSignatureView"
 ```
 
