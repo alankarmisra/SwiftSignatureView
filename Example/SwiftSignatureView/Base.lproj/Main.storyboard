@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,30 +19,63 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWx-Y3-ll7" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBO-ga-7c4">
-                                        <rect key="frame" x="282" y="562" width="36" height="30"/>
-                                        <state key="normal" title="Clear"/>
-                                        <connections>
-                                            <action selector="didTapClear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DdP-Pi-0dL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="225" width="560" height="150"/>
+                                <color key="backgroundColor" red="0.92767518940000004" green="0.92767518940000004" blue="0.92767518940000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="yBO-ga-7c4" secondAttribute="bottom" constant="8" id="1OP-bE-L0P"/>
-                                    <constraint firstItem="yBO-ga-7c4" firstAttribute="centerX" secondItem="WWx-Y3-ll7" secondAttribute="centerX" id="cu6-fX-VHb"/>
+                                    <constraint firstAttribute="height" constant="150" id="EG0-8p-Lka"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeAlpha">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dn-5I-1wr">
+                                <rect key="frame" x="282" y="550" width="36" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="vmF-Xa-m8M"/>
+                                    <constraint firstAttribute="height" constant="30" id="zxe-Io-c5M"/>
+                                </constraints>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="didTapClear:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wJT-9Z-XzC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxB-EY-lJP">
+                                <rect key="frame" x="20" y="190" width="84" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0oe-DS-Y7f"/>
+                                    <constraint firstAttribute="width" constant="84" id="qvn-gH-DnV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="WWx-Y3-ll7" secondAttribute="trailing" id="7EM-TQ-1aN"/>
-                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="H6h-Cd-Uok"/>
-                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="HSq-c2-K2N"/>
-                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ifK-c5-lkP"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="3dt-KA-3hC"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="4Xg-BZ-DS4"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" constant="20" id="9gA-cm-fn4"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="H3q-ag-kpi"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Ojt-pk-QUc"/>
+                            <constraint firstItem="8Dn-5I-1wr" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="WBs-in-pg5"/>
+                            <constraint firstItem="BxB-EY-lJP" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" constant="-100" id="fKD-4y-7wh"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="lK7-TM-BNi"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8Dn-5I-1wr" secondAttribute="bottom" constant="20" id="p7W-Sm-NW2"/>
+                            <constraint firstItem="BxB-EY-lJP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="phR-CM-vhk"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="zlD-gm-1BX"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9gA-cm-fn4"/>
+                                <exclude reference="Ojt-pk-QUc"/>
+                                <exclude reference="zlD-gm-1BX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="signatureView" destination="WWx-Y3-ll7" id="egY-uO-3Sl"/>

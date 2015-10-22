@@ -57,7 +57,7 @@ public class SwiftSignatureView: UIView {
     
     // MARK: Public Methods
     public func clear() {
-        let rect = self.frame
+        let rect = self.bounds
         UIGraphicsBeginImageContext(rect.size)
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -82,7 +82,7 @@ public class SwiftSignatureView: UIView {
     }
     
     func tap(tap:UITapGestureRecognizer) {
-        let rect = self.frame
+        let rect = self.bounds
         
         UIGraphicsBeginImageContext(rect.size)
         if(signature == nil) {
@@ -105,7 +105,7 @@ public class SwiftSignatureView: UIView {
             let currentPoint = pan.locationInView(self)
             let strokeLength = distance(previousPoint, pt2: currentPoint)
             if(strokeLength >= 1.0) {
-                let rect = self.frame
+                let rect = self.bounds
                 UIGraphicsBeginImageContext(rect.size)
                 if(signature == nil) {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
