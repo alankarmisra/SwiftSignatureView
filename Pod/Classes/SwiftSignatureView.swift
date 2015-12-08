@@ -57,10 +57,7 @@ public class SwiftSignatureView: UIView {
     
     // MARK: Public Methods
     public func clear() {
-        let rect = self.bounds
-        UIGraphicsBeginImageContext(rect.size)
-        signature = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+        signature = nil
         self.setNeedsDisplay()
     }
     
