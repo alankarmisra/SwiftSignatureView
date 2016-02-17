@@ -1,4 +1,4 @@
-# SwiftSignatureView (Swift 2.0 / XCode 7 compatible)
+# SwiftSignatureView (Swift 2.0 / Xcode 7 compatible)
 
 [![CI Status](http://img.shields.io/travis/Alankar Misra/SwiftSignatureView.svg?style=flat)](https://travis-ci.org/Alankar Misra/SwiftSignatureView)
 [![Version](https://img.shields.io/cocoapods/v/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
