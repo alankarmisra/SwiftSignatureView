@@ -69,6 +69,16 @@ public class SwiftSignatureView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        initialize()
+    }
+    
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        initialize()
+    }
+    
+    private func initialize() {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
         self.addGestureRecognizer(tap)
         
