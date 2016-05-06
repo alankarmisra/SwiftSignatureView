@@ -91,7 +91,7 @@ public class SwiftSignatureView: UIView {
     func tap(tap:UITapGestureRecognizer) {
         let rect = self.bounds
         
-        UIGraphicsBeginImageContext(rect.size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
         if(signature == nil) {
             signature = UIGraphicsGetImageFromCurrentImageContext()
         }
@@ -113,7 +113,7 @@ public class SwiftSignatureView: UIView {
             let strokeLength = distance(previousPoint, pt2: currentPoint)
             if(strokeLength >= 1.0) {
                 let rect = self.bounds
-                UIGraphicsBeginImageContext(rect.size)
+                UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
                 if(signature == nil) {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
