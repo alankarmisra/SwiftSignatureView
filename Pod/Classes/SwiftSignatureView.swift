@@ -67,22 +67,20 @@ public class SwiftSignatureView: UIView {
     private var previousWidth:CGFloat = 0.0
     
     required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
+        super.init(coder: aDecoder)        
         initialize()
     }
     
     override public init(frame: CGRect) {
-        super.init(frame: frame)
-        
+        super.init(frame: frame)        
         initialize()
     }
     
     private func initialize() {
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tap:")
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SwiftSignatureView.tap(_:)))
         self.addGestureRecognizer(tap)
         
-        let pan:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
+        let pan:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(SwiftSignatureView.pan(_:)))
         pan.minimumNumberOfTouches = 1
         pan.maximumNumberOfTouches = 1
         self.addGestureRecognizer(pan)
