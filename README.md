@@ -10,6 +10,12 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
+## Version 1.0.0 | Bug fixes and Syntax updates to Swift 2.2
+
+- Fixes an issue where the signature might appear blurred on retina displays
+- Updates the syntax to Swift 2.2
+- Fixes pod spec to make it compatible with Cocoapods 1.0
+
 ## Version 0.0.8 | Bug fixes
 
 Version 0.0.8 fixes a bug that caused SwiftSignatureView to compute incorrect offsets when not in full-screen mode. A big thank you to [Todd Kersey](https://github.com/tokersey) for discovering the bug and suggesting a fix. This update fixes the issue.
