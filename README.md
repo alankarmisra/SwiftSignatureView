@@ -47,7 +47,7 @@ to clear the signature view.
 ## Installation
 
 SwiftSignatureView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following lines to your Podfile:
 
 ```ruby
 use_frameworks!
