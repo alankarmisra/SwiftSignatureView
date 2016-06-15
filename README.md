@@ -54,6 +54,13 @@ use_frameworks!
 pod "SwiftSignatureView"
 ```
 
+### Update
+
+In Cocoapods 1.0, add a target to your Podfile
+target "YOUR_PROJECT_NAME" do
+    pod "SwiftSignatureView"
+end
+
 ## Author
 
 Alankar Misra, alankarmisra@gmail.com
