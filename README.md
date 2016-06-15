@@ -56,7 +56,7 @@ pod "SwiftSignatureView"
 
 ### Update
 
-In Cocoapods 1.0, add a target to your Podfile
+In CocoaPods 1.0, add a target to your Podfile
 
 ```ruby
 target "YOUR_PROJECT_NAME" do
