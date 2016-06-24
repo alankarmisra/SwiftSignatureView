@@ -8,9 +8,19 @@
 
 import UIKit
 
+public protocol SwiftSignatureViewDelegate: class {
+
+    func swiftSignatureViewDidTapInside(view: SwiftSignatureView)
+
+    func swiftSignatureViewDidPanInside(view: SwiftSignatureView)
+
+}
+
 /// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
 public class SwiftSignatureView: UIView {
     // MARK: Public Properties
+
+    public weak var delegate: SwiftSignatureViewDelegate?
     
     /**
     The maximum stroke width.
@@ -99,6 +109,8 @@ public class SwiftSignatureView: UIView {
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
+
+        self.delegate?.swiftSignatureViewDidTapInside(self)
     }
     
     func pan(pan:UIPanGestureRecognizer) {
@@ -136,6 +148,7 @@ public class SwiftSignatureView: UIView {
         default:
             break
         }
+        self.delegate?.swiftSignatureViewDidPanInside(self)
     }
     
     private func distance(pt1:CGPoint, pt2:CGPoint) -> CGFloat {
