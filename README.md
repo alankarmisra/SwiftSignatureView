@@ -10,6 +10,10 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
+## Version 1.0.2 | Callbacks for panning/tapping
+
+- Added delegate for callbacks on panning/tapping.
+
 ## Version 1.0.1 | Bug fixes and Syntax updates to Swift 2.2
 
 - Fixes an issue where the signature might appear blurred on retina displays
