@@ -9,16 +9,30 @@
 import UIKit
 import SwiftSignatureView
 
-public class ViewController: UIViewController {
-    
-    
+public class ViewController: UIViewController, SwiftSignatureViewDelegate {
+
+
     @IBOutlet weak var signatureView: SwiftSignatureView!
     // Use signatureView.signature to get at the signature image
-    
-    
+
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.signatureView.delegate = self
+    }
+
     @IBAction func didTapClear(sender: AnyObject) {
         signatureView.clear()
     }
-    
+
+    //MARK: Delegate
+
+    public func swiftSignatureViewDidTapInside(view: SwiftSignatureView) {
+        print("Did tap inside")
+    }
+
+    public func swiftSignatureViewDidPanInside(view: SwiftSignatureView) {
+        print("Did pan inside")
+    }
 }
 
