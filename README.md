@@ -5,6 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
 
+## Attention Cocoapod users
+I'm currently unable to update the Cocoapod repository to 1.0.3 due to an  [issue](https://github.com/CocoaPods/CocoaPods/issues/5663) with Cocoapods. I'm trying to resolve this but it might take me a day or two. Until then, you can continue using 1.0.2. It is source compatible with 2.3. Xcode 8 will merely ask to update the build settings for the code. Accepting this update should make the code usable with Xcode 8. 
+
 ## Description
 SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage. With code that varies the pen width based on the speed of the finger movement, the view generates fluid, natural looking signatures. 
 
