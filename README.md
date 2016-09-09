@@ -1,4 +1,4 @@
-# SwiftSignatureView (Swift 2.0 / Xcode 7 compatible)
+# SwiftSignatureView (Swift 2.3 / Xcode 8 compatible)
 
 [![CI Status](http://img.shields.io/travis/Alankar Misra/SwiftSignatureView.svg?style=flat)](https://travis-ci.org/Alankar Misra/SwiftSignatureView)
 [![Version](https://img.shields.io/cocoapods/v/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
@@ -9,6 +9,10 @@
 SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage. With code that varies the pen width based on the speed of the finger movement, the view generates fluid, natural looking signatures. 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
+
+## Version 1.0.3 | Swift 2.3 / XCode 8 compatibility
+
+- Upgraded the Example to use XCode 8 Storyboards. The SwiftSignatureView class file, however, remains unchanged when 'upgraded' to Swift 2.3.
 
 ## Version 1.0.2 | Callbacks for panning/tapping
 
