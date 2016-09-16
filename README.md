@@ -72,9 +72,6 @@ target "YOUR_PROJECT_NAME" do
 end
 ```
 
-## Attention Cocoapod users
-I'm currently unable to update the Cocoapod repository to 1.0.3 due to an  [issue](https://github.com/CocoaPods/CocoaPods/issues/5663) with Cocoapods. I'm trying to resolve this but it might take me a day or two. Until then, you can continue using 1.0.2. It is source compatible with 2.3. Xcode 8 will merely ask to update the build settings for the code. Accepting this update should make the code usable with Xcode 8. 
-
 ## Author
 
 Alankar Misra, alankarmisra@gmail.com
