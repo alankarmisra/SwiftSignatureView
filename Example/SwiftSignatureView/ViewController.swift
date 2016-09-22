@@ -17,21 +17,20 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-
         self.signatureView.delegate = self
     }
 
-    @IBAction func didTapClear(sender: AnyObject) {
-        signatureView.clear()
+    @IBAction func didTapClear() {
+        signatureView.clear()        
     }
 
     //MARK: Delegate
 
-    public func swiftSignatureViewDidTapInside(view: SwiftSignatureView) {
+    public func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView) {
         print("Did tap inside")
     }
 
-    public func swiftSignatureViewDidPanInside(view: SwiftSignatureView) {
+    public func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView) {
         print("Did pan inside")
     }
 }

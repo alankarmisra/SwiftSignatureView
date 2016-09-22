@@ -10,22 +10,22 @@ import UIKit
 
 public protocol SwiftSignatureViewDelegate: class {
 
-    func swiftSignatureViewDidTapInside(view: SwiftSignatureView)
+    func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView)
 
-    func swiftSignatureViewDidPanInside(view: SwiftSignatureView)
+    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView)
 
 }
 
 /// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
-public class SwiftSignatureView: UIView {
+open class SwiftSignatureView: UIView {
     // MARK: Public Properties
 
-    public weak var delegate: SwiftSignatureViewDelegate?
+    open weak var delegate: SwiftSignatureViewDelegate?
     
     /**
     The maximum stroke width.
     */
-    @IBInspectable public var maximumStrokeWidth:CGFloat = 4 {
+    @IBInspectable open var maximumStrokeWidth:CGFloat = 4 {
         didSet {
             if(maximumStrokeWidth < minimumStrokeWidth || maximumStrokeWidth <= 0) {
                 maximumStrokeWidth = oldValue
@@ -36,7 +36,7 @@ public class SwiftSignatureView: UIView {
     /**
     The minimum stroke width.
     */
-    @IBInspectable public var minimumStrokeWidth:CGFloat = 1 {
+    @IBInspectable open var minimumStrokeWidth:CGFloat = 1 {
         didSet {
             if(minimumStrokeWidth > maximumStrokeWidth || minimumStrokeWidth <= 0) {
                 minimumStrokeWidth = oldValue
@@ -47,12 +47,12 @@ public class SwiftSignatureView: UIView {
     /**
     The stroke color.
     */
-    @IBInspectable public var strokeColor:UIColor = UIColor.blackColor()
+    @IBInspectable open var strokeColor:UIColor = UIColor.black
     
     /**
     The stroke alpha. Prefer higher values to prevent stroke segments from showing through.
     */
-    @IBInspectable public var strokeAlpha:CGFloat = 1.0 {
+    @IBInspectable open var strokeAlpha:CGFloat = 1.0 {
         didSet {
             if(strokeAlpha <= 0.0 || strokeAlpha > 1.0) {
                 strokeAlpha = oldValue
@@ -63,21 +63,21 @@ public class SwiftSignatureView: UIView {
     /**
     The UIImage representation of the signature. Read only.
     */
-    private(set) public var signature:UIImage?
+    fileprivate(set) open var signature:UIImage?
     
     // MARK: Public Methods
-    public func clear() {
+    open func clear() {
         signature = nil
         self.setNeedsDisplay()
     }
     
     // MARK: Private Methods
-    private var previousPoint = CGPointZero
-    private var previousEndPoint = CGPointZero
-    private var previousWidth:CGFloat = 0.0
+    fileprivate var previousPoint = CGPoint.zero
+    fileprivate var previousEndPoint = CGPoint.zero
+    fileprivate var previousWidth:CGFloat = 0.0
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)        
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         initialize()
     }
     
@@ -85,8 +85,8 @@ public class SwiftSignatureView: UIView {
         super.init(frame: frame)        
         initialize()
     }
-    
-    private func initialize() {
+
+    fileprivate func initialize() {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SwiftSignatureView.tap(_:)))
         self.addGestureRecognizer(tap)
         
@@ -96,15 +96,15 @@ public class SwiftSignatureView: UIView {
         self.addGestureRecognizer(pan)
     }
     
-    func tap(tap:UITapGestureRecognizer) {
+    func tap(_ tap:UITapGestureRecognizer) {
         let rect = self.bounds
         
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
         if(signature == nil) {
             signature = UIGraphicsGetImageFromCurrentImageContext()
         }
-        signature?.drawInRect(rect)
-        let currentPoint = tap.locationInView(self)
+        signature?.draw(in: rect)
+        let currentPoint = tap.location(in: self)
         drawPointAt(currentPoint, pointSize: 5.0)
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -113,22 +113,22 @@ public class SwiftSignatureView: UIView {
         self.delegate?.swiftSignatureViewDidTapInside(self)
     }
     
-    func pan(pan:UIPanGestureRecognizer) {
+    func pan(_ pan:UIPanGestureRecognizer) {
         switch(pan.state) {
-        case .Began:
-            previousPoint = pan.locationInView(self)
+        case .began:
+            previousPoint = pan.location(in: self)
             previousEndPoint = previousPoint
-        case .Changed:
-            let currentPoint = pan.locationInView(self)
+        case .changed:
+            let currentPoint = pan.location(in: self)
             let strokeLength = distance(previousPoint, pt2: currentPoint)
             if(strokeLength >= 1.0) {
                 let rect = self.bounds
-                UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
+                UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
                 if(signature == nil) {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
                 // Draw the prior signature
-                signature?.drawInRect(rect)
+                signature?.draw(in: rect)
                 
                 let delta:CGFloat = 0.5
                 let strokeScale:CGFloat = 50 // fudge factor based on empirical tests
@@ -151,19 +151,19 @@ public class SwiftSignatureView: UIView {
         self.delegate?.swiftSignatureViewDidPanInside(self)
     }
     
-    private func distance(pt1:CGPoint, pt2:CGPoint) -> CGFloat {
+    fileprivate func distance(_ pt1:CGPoint, pt2:CGPoint) -> CGFloat {
         return sqrt((pt1.x - pt2.x)*(pt1.x - pt2.x) + (pt1.y - pt2.y)*(pt1.y - pt2.y))
     }
     
-    private func CGPointMid(p0 p0:CGPoint, p1:CGPoint)->CGPoint {
-        return CGPointMake((p0.x+p1.x)/2.0, (p0.y+p1.y)/2.0)
+    fileprivate func CGPointMid(p0:CGPoint, p1:CGPoint)->CGPoint {
+        return CGPoint(x: (p0.x+p1.x)/2.0, y: (p0.y+p1.y)/2.0)
     }
     
-    override public func drawRect(rect: CGRect) {
-        signature?.drawInRect(rect)
+    override open func draw(_ rect: CGRect) {
+        signature?.draw(in: rect)
     }
     
-    private func getOffsetPoints(p0 p0:CGPoint, p1:CGPoint, width:CGFloat) -> (p0:CGPoint, p1:CGPoint) {
+    fileprivate func getOffsetPoints(p0:CGPoint, p1:CGPoint, width:CGFloat) -> (p0:CGPoint, p1:CGPoint) {
         let pi_by_2:CGFloat = 3.14/2
         let delta = width/2.0
         let v0 = p1.x - p0.x
@@ -183,7 +183,7 @@ public class SwiftSignatureView: UIView {
         return (CGPoint(x: p0.x+du0, y: p0.y+du1),CGPoint(x: p0.x-du0, y: p0.y-du1))
     }
     
-    private func drawQuadCurve(start:CGPoint, control:CGPoint, end:CGPoint, startWidth:CGFloat, endWidth:CGFloat) {
+    fileprivate func drawQuadCurve(_ start:CGPoint, control:CGPoint, end:CGPoint, startWidth:CGFloat, endWidth:CGFloat) {
         if(start != control) {
             let path = UIBezierPath()
             let controlWidth = (startWidth+endWidth)/2.0
@@ -192,33 +192,33 @@ public class SwiftSignatureView: UIView {
             let controlOffsets = getOffsetPoints(p0: control, p1: start, width: controlWidth)
             let endOffsets = getOffsetPoints(p0: end, p1: control, width: endWidth)
             
-            path.moveToPoint(startOffsets.p0)
-            path.addQuadCurveToPoint(endOffsets.p1, controlPoint: controlOffsets.p1)
-            path.addLineToPoint(endOffsets.p0)
-            path.addQuadCurveToPoint(startOffsets.p1, controlPoint: controlOffsets.p0)
-            path.addLineToPoint(startOffsets.p1)
+            path.move(to: startOffsets.p0)
+            path.addQuadCurve(to: endOffsets.p1, controlPoint: controlOffsets.p1)
+            path.addLine(to: endOffsets.p0)
+            path.addQuadCurve(to: startOffsets.p1, controlPoint: controlOffsets.p0)
+            path.addLine(to: startOffsets.p1)
             
-            let signatureColor = strokeColor.colorWithAlphaComponent(strokeAlpha)
+            let signatureColor = strokeColor.withAlphaComponent(strokeAlpha)
             signatureColor.setFill()
             signatureColor.setStroke()
             
             path.lineWidth = 1
-            path.lineJoinStyle = CGLineJoin.Round
-            path.lineCapStyle = CGLineCap.Round
+            path.lineJoinStyle = CGLineJoin.round
+            path.lineCapStyle = CGLineCap.round
             path.stroke()
             path.fill()
         }
     }
     
-    private func drawPointAt(point:CGPoint, pointSize:CGFloat = 1.0) {
+    fileprivate func drawPointAt(_ point:CGPoint, pointSize:CGFloat = 1.0) {
         let path = UIBezierPath()
-        let signatureColor = strokeColor.colorWithAlphaComponent(strokeAlpha)
+        let signatureColor = strokeColor.withAlphaComponent(strokeAlpha)
         signatureColor.setStroke()
         
         path.lineWidth = pointSize
-        path.lineCapStyle = CGLineCap.Round
-        path.moveToPoint(point)
-        path.addLineToPoint(point)
+        path.lineCapStyle = CGLineCap.round
+        path.move(to: point)
+        path.addLine(to: point)
         path.stroke()
     }
 }
