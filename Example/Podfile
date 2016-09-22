@@ -7,6 +7,5 @@ end
 
 target 'SwiftSignatureView_Tests' do
   pod "SwiftSignatureView", :path => "../"
-
-  
 end
+

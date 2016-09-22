@@ -21,7 +21,7 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
     }
 
     @IBAction func didTapClear() {
-        signatureView.clear()        
+        signatureView.clear()
     }
 
     //MARK: Delegate
