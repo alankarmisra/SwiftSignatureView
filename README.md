@@ -1,4 +1,4 @@
-# SwiftSignatureView (Swift 2.3 / Xcode 8 compatible)
+# SwiftSignatureView (Swift 3.0 / Xcode 8)
 
 [![CI Status](http://img.shields.io/travis/Alankar Misra/SwiftSignatureView.svg?style=flat)](https://travis-ci.org/Alankar Misra/SwiftSignatureView)
 [![Version](https://img.shields.io/cocoapods/v/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
