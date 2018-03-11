@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftSignatureView"
-  s.version          = "2.0.1"
+  s.version          = "2.0.2"
   s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app."
 
   s.description      = <<-DESC

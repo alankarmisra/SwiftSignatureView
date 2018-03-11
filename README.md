@@ -10,6 +10,10 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
+## Version 2.0.2 | Swift 4.0 / XCode 9
+
+- Upgraded the Pod to 4.0 syntax / XCode 9. The interface remains unchanged.
+
 ## Version 2.0 | Swift 3.0 / XCode 8
 
 - Upgraded the Pod to Swift 3.0 syntax. The interface remains unchanged. 
