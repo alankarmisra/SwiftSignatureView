@@ -64,11 +64,17 @@ open class SwiftSignatureView: UIView {
     The UIImage representation of the signature. Read only.
     */
     fileprivate(set) open var signature:UIImage?
+
+    /**
+     The CGPaths that comprise the signature. Read only.
+     */
+    @nonobjc fileprivate(set) var signaturePaths = [CGPath]()
     
     // MARK: Public Methods
     open func clear() {
         signature = nil
         self.setNeedsDisplay()
+        signaturePaths = [CGPath]()
     }
     
     // MARK: Private Methods
@@ -207,6 +213,7 @@ open class SwiftSignatureView: UIView {
             path.lineCapStyle = CGLineCap.round
             path.stroke()
             path.fill()
+            signaturePaths.append(path.cgPath)
         }
     }
     
