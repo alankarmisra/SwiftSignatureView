@@ -65,8 +65,11 @@ open class SwiftSignatureView: UIView {
     */
     fileprivate(set) open var signature:UIImage?
     
+    fileprivate var path = UIBezierPath()
+    
     // MARK: Public Methods
     open func clear() {
+        self.path.removeAllPoints()
         signature = nil
         self.setNeedsDisplay()
     }
@@ -185,7 +188,7 @@ open class SwiftSignatureView: UIView {
     
     fileprivate func drawQuadCurve(_ start:CGPoint, control:CGPoint, end:CGPoint, startWidth:CGFloat, endWidth:CGFloat) {
         if(start != control) {
-            let path = UIBezierPath()
+          //  let path = UIBezierPath()
             let controlWidth = (startWidth+endWidth)/2.0
             
             let startOffsets = getOffsetPoints(p0: start, p1: control, width: startWidth)
@@ -220,5 +223,23 @@ open class SwiftSignatureView: UIView {
         path.move(to: point)
         path.addLine(to: point)
         path.stroke()
+    }
+    
+    public func getCroppedSignature() -> UIImage? {
+        guard let fullRender = signature else { return nil }
+        let bounds = self.scale(path.bounds.insetBy(dx: -maximumStrokeWidth/2 , dy: -maximumStrokeWidth/2), byFactor: fullRender.scale)
+        guard let imageRef = fullRender.cgImage?.cropping(to: bounds) else { return nil }
+        return UIImage(cgImage: imageRef)
+    }
+    
+    
+    fileprivate func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect
+    {
+        var scaledRect = rect
+        scaledRect.origin.x *= factor
+        scaledRect.origin.y *= factor
+        scaledRect.size.width *= factor
+        scaledRect.size.height *= factor
+        return scaledRect
     }
 }
