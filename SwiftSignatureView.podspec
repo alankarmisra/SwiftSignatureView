@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftSignatureView"
-  s.version          = "2.0.0"
+  s.version          = "2.0.1"
   s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app."
 
   s.description      = <<-DESC
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/alankarmisra_'
 
   s.platform     = :ios, '8.3'
+  s.swift_version = '5.0.1'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

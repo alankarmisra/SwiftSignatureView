@@ -27,11 +27,11 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
     //MARK: Delegate
 
     public func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView) {
-        print("Did tap inside")
+        // noop
     }
 
     public func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView) {
-        print("Did pan inside")
+        // noop
     }
 }
 
