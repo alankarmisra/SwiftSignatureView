@@ -59,16 +59,27 @@ open class SwiftSignatureView: UIView {
             }
         }
     }
-    
+
     /**
-    The UIImage representation of the signature. Read only.
+    The true backing variable used with core graphics. Private.
     */
-    fileprivate(set) open var signature:UIImage?
+    fileprivate var _signature:UIImage?
+    /**
+    The UIImage representation of the signature. Read/write.
+    */
+    open var signature:UIImage? {
+        get {
+            return _signature
+        }
+        set {
+            _signature = newValue
+            self.setNeedsDisplay()
+        }
+    }
     
     // MARK: Public Methods
     open func clear() {
         signature = nil
-        self.setNeedsDisplay()
     }
     
     // MARK: Private Methods
@@ -100,13 +111,13 @@ open class SwiftSignatureView: UIView {
         let rect = self.bounds
         
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-        if(signature == nil) {
-            signature = UIGraphicsGetImageFromCurrentImageContext()
+        if(_signature == nil) {
+            _signature = UIGraphicsGetImageFromCurrentImageContext()
         }
-        signature?.draw(in: rect)
+        _signature?.draw(in: rect)
         let currentPoint = tap.location(in: self)
         drawPointAt(currentPoint, pointSize: 5.0)
-        signature = UIGraphicsGetImageFromCurrentImageContext()
+        _signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
 
@@ -124,11 +135,11 @@ open class SwiftSignatureView: UIView {
             if(strokeLength >= 1.0) {
                 let rect = self.bounds
                 UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-                if(signature == nil) {
-                    signature = UIGraphicsGetImageFromCurrentImageContext()
+                if(_signature == nil) {
+                    _signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
                 // Draw the prior signature
-                signature?.draw(in: rect)
+                _signature?.draw(in: rect)
                 
                 let delta:CGFloat = 0.5
                 let strokeScale:CGFloat = 50 // fudge factor based on empirical tests
@@ -137,7 +148,7 @@ open class SwiftSignatureView: UIView {
                 
                 drawQuadCurve(previousEndPoint, control: previousPoint, end: midPoint, startWidth:previousWidth, endWidth: currentWidth)
                 
-                signature = UIGraphicsGetImageFromCurrentImageContext()
+                _signature = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
                 previousPoint = currentPoint
                 previousEndPoint = midPoint
@@ -160,7 +171,7 @@ open class SwiftSignatureView: UIView {
     }
     
     override open func draw(_ rect: CGRect) {
-        signature?.draw(in: rect)
+        _signature?.draw(in: rect)
     }
     
     fileprivate func getOffsetPoints(p0:CGPoint, p1:CGPoint, width:CGFloat) -> (p0:CGPoint, p1:CGPoint) {
