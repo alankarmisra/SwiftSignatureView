@@ -61,13 +61,13 @@ More specifically, you simply assign the *SwiftSignatureView* class to a UIView,
 you can use
 
 ```swift
-signatureView.signature
+signatureView.signature()
 ```
 
 to get a UIImage representation of the signature;
 
 ```swift
-signatureView.getCroppedSignature
+signatureView.getCroppedSignature()
 ```
 
 to get a UIImage representation of the cropped signature with the surrounding whitespace trimmed.
