@@ -9,7 +9,7 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
-## Version 2.2.1 | Swift 5.0
+## Version 2.2.2 | Swift 5.0
 
 - Modified the *swiftSignatureViewDidPanInside* delegate method to include the pan gesture recognizer in the callback. 
   _Warning_: This will change the interface!
