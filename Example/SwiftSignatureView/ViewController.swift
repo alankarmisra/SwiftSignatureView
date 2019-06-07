@@ -12,9 +12,11 @@ import SwiftSignatureView
 public class ViewController: UIViewController, SwiftSignatureViewDelegate {
 
 
-    @IBOutlet weak var signatureView: SwiftSignatureView!
     // Use signatureView.signature to get at the signature image
-
+    @IBOutlet weak var signatureView: SwiftSignatureView!
+    
+    @IBOutlet weak var croppedSignatureView: UIImageView!
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.signatureView.delegate = self
@@ -23,7 +25,10 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
     @IBAction func didTapClear() {
         signatureView.clear()
     }
-
+    
+    @IBAction func didTapRefreshCroppedSignature() {
+        croppedSignatureView.image = signatureView.getCroppedSignature()
+    }
     //MARK: Delegate
 
     public func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView) {

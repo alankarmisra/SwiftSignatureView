@@ -1,6 +1,5 @@
 # SwiftSignatureView (Swift 5.0)
 
-[![CI Status](http://img.shields.io/travis/Alankar Misra/SwiftSignatureView.svg?style=flat)](https://travis-ci.org/Alankar Misra/SwiftSignatureView)
 [![Version](https://img.shields.io/cocoapods/v/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
 [![License](https://img.shields.io/cocoapods/l/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftSignatureView.svg?style=flat)](http://cocoapods.org/pods/SwiftSignatureView)
@@ -10,7 +9,15 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
-## Version 2.1 | Swift 5.0 
+## Version 2.2.0 | Swift 5.0 
+
+- Added a *getCroppedSignature* method to get a UIImage of the signature with surrounding whitespace trimmed
+- Made the signature image publicly settable
+- Modified the example to demonstrate the cropped signature function
+
+[ A big thank you to all the contributors. I know I don't say it enough. ]
+
+## Version 2.1.0 | Swift 5.0 
 
 - Updated the Pod to Swift 5.0 syntax. The interface remains unchanged.
 
@@ -46,13 +53,19 @@ More specifically, you simply assign the *SwiftSignatureView* class to a UIView,
 @IBOutlet weak var signatureView: SwiftSignatureView!
 ```
 
-you could use
+you can use
 
 ```swift
 signatureView.signature
 ```
 
-to get a UIImage representation of the signature and 
+to get a UIImage representation of the signature;
+
+```swift
+signatureView.getCroppedSignature
+```
+
+to get a UIImage representation of the cropped signature with the surrounding whitespace trimmed.
 
 ```swift
 signatureView.clear()

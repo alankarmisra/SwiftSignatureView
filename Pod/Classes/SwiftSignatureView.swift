@@ -99,6 +99,13 @@ open class SwiftSignatureView: UIView {
         super.init(frame: frame)        
         initialize()
     }
+    
+    public func getCroppedSignature() -> UIImage? {
+        guard let fullRender = signature else { return nil }
+        let bounds = self.scale(path.bounds.insetBy(dx: -maximumStrokeWidth/2 , dy: -maximumStrokeWidth/2), byFactor: fullRender.scale)
+        guard let imageRef = fullRender.cgImage?.cropping(to: bounds) else { return nil }
+        return UIImage(cgImage: imageRef)
+    }
 
     fileprivate func initialize() {
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SwiftSignatureView.tap(_:)))
@@ -235,14 +242,6 @@ open class SwiftSignatureView: UIView {
         path.addLine(to: point)
         path.stroke()
     }
-    
-    public func getCroppedSignature() -> UIImage? {
-        guard let fullRender = signature else { return nil }
-        let bounds = self.scale(path.bounds.insetBy(dx: -maximumStrokeWidth/2 , dy: -maximumStrokeWidth/2), byFactor: fullRender.scale)
-        guard let imageRef = fullRender.cgImage?.cropping(to: bounds) else { return nil }
-        return UIImage(cgImage: imageRef)
-    }
-    
     
     fileprivate func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect
     {
