@@ -35,7 +35,7 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
         // noop
     }
 
-    public func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView) {
+    public func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan:UIPanGestureRecognizer) {
         // noop
     }
 }

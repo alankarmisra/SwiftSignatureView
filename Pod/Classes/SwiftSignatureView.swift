@@ -9,11 +9,8 @@
 import UIKit
 
 public protocol SwiftSignatureViewDelegate: class {
-
     func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView)
-
-    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView)
-
+    func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan:UIPanGestureRecognizer)
 }
 
 /// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
@@ -169,7 +166,8 @@ open class SwiftSignatureView: UIView {
         default:
             break
         }
-        self.delegate?.swiftSignatureViewDidPanInside(self)
+        
+        self.delegate?.swiftSignatureViewDidPanInside(self, pan)
     }
     
     fileprivate func distance(_ pt1:CGPoint, pt2:CGPoint) -> CGFloat {
