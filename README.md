@@ -80,10 +80,11 @@ to clear the signature view.
 
 ## Installation
 
-SwiftSignatureView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following lines to your Podfile:
+SwiftSignatureView is available through [CocoaPods](http://cocoapods.org) and Swift Package Manager.
 
 ### For Cocoapods >= 1.0 
+
+Add the following lines to your Podfile:
 
 ```ruby
 use_frameworks!
@@ -94,9 +95,21 @@ end
 
 ### For Cocoapods < 1.0
 
+Add the following lines to your Podfile:
+
 ```ruby
 use_frameworks!
 pod "SwiftSignatureView"
+```
+
+### For Swift Package Manager
+
+Add the following lines to your Package.swift file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "2.2.2")
+]
 ```
 
 ## Author
