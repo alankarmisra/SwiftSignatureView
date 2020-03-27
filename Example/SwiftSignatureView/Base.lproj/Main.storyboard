@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,9 +62,24 @@
                                     <action selector="didTapClear" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ehw-5w-7Hb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0f-7r-97U">
+                                <rect key="frame" x="314" y="232" width="36" height="30"/>
+                                <state key="normal" title="Redo"/>
+                                <connections>
+                                    <action selector="didTapRedo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AzA-CZ-7m5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dad-vi-asR">
+                                <rect key="frame" x="269" y="232" width="37" height="30"/>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="didTapUndo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hhq-lk-YQ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="top" secondItem="T0f-7r-97U" secondAttribute="bottom" constant="11" id="1ib-Vh-mvI"/>
                             <constraint firstItem="ZJs-BI-m5T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fGw-KJ-Cpg" secondAttribute="trailing" constant="8" symbolic="YES" id="3Pb-VF-0Ra"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6zr-eA-iD9"/>
                             <constraint firstItem="8Dn-5I-1wr" firstAttribute="trailing" secondItem="WWx-Y3-ll7" secondAttribute="trailing" id="7iI-nI-t8w"/>
@@ -78,12 +91,15 @@
                             <constraint firstItem="ZJs-BI-m5T" firstAttribute="top" secondItem="fGw-KJ-Cpg" secondAttribute="top" id="SBb-ep-bnJ"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="35w-zR-awq" secondAttribute="leading" id="SmG-VL-McM"/>
                             <constraint firstItem="fGw-KJ-Cpg" firstAttribute="top" secondItem="WWx-Y3-ll7" secondAttribute="bottom" constant="15" id="VM9-Zi-u9q"/>
+                            <constraint firstItem="T0f-7r-97U" firstAttribute="leading" secondItem="dad-vi-asR" secondAttribute="trailing" constant="8" id="Vdk-Jd-ntL"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="top" secondItem="8Dn-5I-1wr" secondAttribute="bottom" constant="11" id="Xch-tt-gIR"/>
                             <constraint firstItem="8Dn-5I-1wr" firstAttribute="top" secondItem="BxB-EY-lJP" secondAttribute="top" id="cbg-Ow-iSz"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="trailing" secondItem="ZJs-BI-m5T" secondAttribute="trailing" id="dEu-5X-pXM"/>
                             <constraint firstItem="8Dn-5I-1wr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BxB-EY-lJP" secondAttribute="trailing" constant="8" symbolic="YES" id="kdj-Rf-UFW"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="fGw-KJ-Cpg" secondAttribute="leading" id="qkK-8q-Xo9"/>
+                            <constraint firstItem="WWx-Y3-ll7" firstAttribute="top" secondItem="dad-vi-asR" secondAttribute="bottom" constant="11" id="rhF-cs-K03"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="tc5-lz-KVq"/>
+                            <constraint firstItem="8Dn-5I-1wr" firstAttribute="leading" secondItem="T0f-7r-97U" secondAttribute="trailing" constant="8" id="wgH-Mt-zKa"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="273" id="z0T-9q-ry2"/>
                         </constraints>
                     </view>

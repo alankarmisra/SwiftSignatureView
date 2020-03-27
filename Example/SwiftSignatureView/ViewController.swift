@@ -25,7 +25,15 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
     @IBAction func didTapClear() {
         signatureView.clear()
     }
-    
+
+    @IBAction func didTapRedo(_ sender: Any) {
+        signatureView.redo()
+    }
+
+    @IBAction func didTapUndo(_ sender: Any) {
+        signatureView.undo()
+    }
+
     @IBAction func didTapRefreshCroppedSignature() {
         croppedSignatureView.image = signatureView.getCroppedSignature()
     }
