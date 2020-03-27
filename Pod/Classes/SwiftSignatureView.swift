@@ -17,7 +17,7 @@ public protocol SwiftSignatureViewDelegate: class {
 open class SwiftSignatureView: UIView {
     // MARK: Public Properties
 
-    open weak var delegate: SwiftSignatureViewDelegate?
+    open var delegate: SwiftSignatureViewDelegate?
     
     /**
     The maximum stroke width.
@@ -104,7 +104,7 @@ open class SwiftSignatureView: UIView {
         cacheIndex -= 1
       }
 
-      print("cacheIndex undo \(cacheIndex)")
+//      print("cacheIndex undo \(cacheIndex)")
 
       cacheIndex -= 1
 
@@ -131,7 +131,7 @@ open class SwiftSignatureView: UIView {
       if cachedPath.count - 1 < cacheIndex {
         return
       }
-      print("cacheIndex redo \(cacheIndex)")
+//      print("cacheIndex redo \(cacheIndex)")
       currentPath = cachedPath[cacheIndex]
       _signature = nil
       self.redraw()
@@ -339,7 +339,7 @@ open class SwiftSignatureView: UIView {
 
         cachedPath.append(belzierPath.copy() as! UIBezierPath)
         cacheIndex = cachedPath.count
-        print("cacheIndex \(cacheIndex)")
+//        print("cacheIndex \(cacheIndex)")
     }
 
 }
