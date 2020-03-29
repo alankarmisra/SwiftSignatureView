@@ -104,8 +104,6 @@ open class SwiftSignatureView: UIView {
         cacheIndex -= 1
       }
 
-//      print("cacheIndex undo \(cacheIndex)")
-
       cacheIndex -= 1
 
       if cacheIndex < 0 {
@@ -131,7 +129,7 @@ open class SwiftSignatureView: UIView {
       if cachedPath.count - 1 < cacheIndex {
         return
       }
-//      print("cacheIndex redo \(cacheIndex)")
+
       currentPath = cachedPath[cacheIndex]
       _signature = nil
       self.redraw()
@@ -339,7 +337,6 @@ open class SwiftSignatureView: UIView {
 
         cachedPath.append(belzierPath.copy() as! UIBezierPath)
         cacheIndex = cachedPath.count
-//        print("cacheIndex \(cacheIndex)")
     }
 
 }
