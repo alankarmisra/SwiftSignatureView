@@ -88,7 +88,6 @@ open class SwiftSignatureView: UIView {
     open func clear() {
         self.currentPath.removeAllPoints()
         cacheIndex = 0
-        cachedPath.removeAll(keepingCapacity: true)
         signature = nil
     }
 
