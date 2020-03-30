@@ -91,6 +91,11 @@ open class SwiftSignatureView: UIView {
         signature = nil
     }
 
+    open func cleanCache() {
+      clear()
+      cachedPath.removeAll(keepingCapacity: true)
+    }
+
     open func undo() {
 
       if cachedPath.isEmpty {
