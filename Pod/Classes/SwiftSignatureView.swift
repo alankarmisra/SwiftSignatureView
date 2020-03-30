@@ -85,15 +85,13 @@ open class SwiftSignatureView: UIView {
     }
     
     // MARK: Public Methods
-    open func clear() {
+    open func clear(cache: Bool = false) {
         self.currentPath.removeAllPoints()
         cacheIndex = 0
+        if cache {
+            cachedPath.removeAll(keepingCapacity: true)
+        }
         signature = nil
-    }
-
-    open func cleanCache() {
-      clear()
-      cachedPath.removeAll(keepingCapacity: true)
     }
 
     open func undo() {
