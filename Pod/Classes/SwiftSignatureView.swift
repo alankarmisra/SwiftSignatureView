@@ -14,7 +14,7 @@ public protocol SwiftSignatureViewDelegate: class {
 }
 
 /// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
-open class SwiftSignatureView: UIView {
+open class SwiftSignatureView: UIView, UIGestureRecognizerDelegate {
     // MARK: Public Properties
 
     open weak var delegate: SwiftSignatureViewDelegate?
@@ -111,6 +111,7 @@ open class SwiftSignatureView: UIView {
         let pan:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(SwiftSignatureView.pan(_:)))
         pan.minimumNumberOfTouches = 1
         pan.maximumNumberOfTouches = 1
+        pan.delegate = self
         self.addGestureRecognizer(pan)
     }
     
@@ -131,12 +132,15 @@ open class SwiftSignatureView: UIView {
         self.delegate?.swiftSignatureViewDidTapInside(self)
     }
     
-    @objc func pan(_ pan:UIPanGestureRecognizer) {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        previousPoint = touch.location(in: self)
+        previousEndPoint = previousPoint
+        return true
+    }
+    
+    @objc public func pan(_ pan:UIPanGestureRecognizer) {
         switch(pan.state) {
-        case .began:
-            previousPoint = pan.location(in: self)
-            previousEndPoint = previousPoint
-        case .changed:
+        case .began, .changed:
             let currentPoint = pan.location(in: self)
             let strokeLength = distance(previousPoint, pt2: currentPoint)
             if(strokeLength >= 1.0) {
