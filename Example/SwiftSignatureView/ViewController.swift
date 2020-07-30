@@ -9,9 +9,7 @@
 import UIKit
 import SwiftSignatureView
 
-public class ViewController: UIViewController, SwiftSignatureViewDelegate {
-
-
+public class ViewController: UIViewController {
     // Use signatureView.signature to get at the signature image
     @IBOutlet weak var signatureView: SwiftSignatureView!
     
@@ -19,7 +17,6 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.signatureView.delegate = self
     }
 
     @IBAction func didTapClear() {
@@ -28,15 +25,6 @@ public class ViewController: UIViewController, SwiftSignatureViewDelegate {
     
     @IBAction func didTapRefreshCroppedSignature() {
         croppedSignatureView.image = signatureView.getCroppedSignature()
-    }
-    //MARK: Delegate
-
-    public func swiftSignatureViewDidTapInside(_ view: SwiftSignatureView) {
-        // noop
-    }
-
-    public func swiftSignatureViewDidPanInside(_ view: SwiftSignatureView, _ pan:UIPanGestureRecognizer) {
-        // noop
     }
 }
 

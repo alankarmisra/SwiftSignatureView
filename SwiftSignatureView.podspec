@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftSignatureView"
-  s.version          = "2.2.3"
-  s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app."
+  s.version          = "3.0.0"
+  s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app. Uses PencilKit for iOS13+"
 
   s.description      = <<-DESC
-                       SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage.
+                       SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage. With code that varies the pen width based on the speed of the finger movement, the view generates fluid, natural looking signatures. *And now, with iOS13+, SwiftSignatureView automatically uses PencilKit to provide a native and even more fluid signature experience, including a natural integration with the Apple Pencil which makes SwiftSignatureView even better!*
                        DESC
 
   s.homepage         = "https://github.com/alankarmisra/SwiftSignatureView"
