@@ -106,11 +106,11 @@ pod "SwiftSignatureView"
 
 ### For Swift Package Manager
 
-Add the following lines to your Package.swift file:
+Add the following lines to your Package.swift file (or just use the Package Manager from within XCode and reference this repo):
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "2.2.2")
+    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "3.0.0")
 ]
 ```
 
