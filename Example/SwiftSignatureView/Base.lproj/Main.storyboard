@@ -101,6 +101,13 @@
                                     <action selector="didTapRefreshCroppedSignature" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5qz-dO-XG9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urO-xa-tcZ">
+                                <rect key="frame" x="167.5" y="445" width="79" height="30"/>
+                                <state key="normal" title="Page Sheet"/>
+                                <connections>
+                                    <segue destination="eXq-Lm-0Fu" kind="show" id="HXs-aa-S8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -110,6 +117,7 @@
                             <constraint firstItem="fGw-KJ-Cpg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Cjw-3O-YQ5"/>
                             <constraint firstItem="8Dn-5I-1wr" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Dag-dB-Kf8"/>
                             <constraint firstItem="T0f-7r-97U" firstAttribute="leading" secondItem="dad-vi-asR" secondAttribute="trailing" constant="8" id="EzD-3D-fXC"/>
+                            <constraint firstItem="urO-xa-tcZ" firstAttribute="top" secondItem="35w-zR-awq" secondAttribute="bottom" constant="8" id="G9W-eO-Td2"/>
                             <constraint firstItem="35w-zR-awq" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="J7r-yc-EDj"/>
                             <constraint firstItem="dad-vi-asR" firstAttribute="centerY" secondItem="T0f-7r-97U" secondAttribute="centerY" id="NSR-cU-2cu"/>
                             <constraint firstItem="BxB-EY-lJP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="NfI-5h-fj4"/>
@@ -118,6 +126,7 @@
                             <constraint firstItem="35w-zR-awq" firstAttribute="top" secondItem="fGw-KJ-Cpg" secondAttribute="bottom" constant="13" id="SJL-Fo-ZkK"/>
                             <constraint firstItem="ZJs-BI-m5T" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="VZX-cK-7yn"/>
                             <constraint firstItem="8Dn-5I-1wr" firstAttribute="leading" secondItem="T0f-7r-97U" secondAttribute="trailing" constant="8" id="Vul-6P-BqF"/>
+                            <constraint firstItem="urO-xa-tcZ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eET-cU-NRZ"/>
                             <constraint firstItem="fGw-KJ-Cpg" firstAttribute="top" secondItem="WWx-Y3-ll7" secondAttribute="bottom" constant="10" id="gbg-bA-KM9"/>
                             <constraint firstItem="WWx-Y3-ll7" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mRi-Ea-4WW"/>
                             <constraint firstItem="8Dn-5I-1wr" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="oMT-GF-hAi"/>
@@ -132,6 +141,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="421.73913043478262" y="302.00892857142856"/>
+        </scene>
+        <!--Page Sheet View Controller-->
+        <scene sceneID="Vj9-PK-QbF">
+            <objects>
+                <viewController id="eXq-Lm-0Fu" customClass="PageSheetViewController" customModule="SwiftSignatureView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mn1-aZ-HqD"/>
+                        <viewControllerLayoutGuide type="bottom" id="OLx-Ld-tuD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qya-za-oh8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-kj-8sN" customClass="SwiftSignatureView" customModule="SwiftSignatureView">
+                                <rect key="frame" x="20" y="346" width="374" height="150"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="utw-os-ejR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumStrokeWidth">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumStrokeWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokeAlpha">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b9Q-kj-8sN" firstAttribute="centerY" secondItem="Qya-za-oh8" secondAttribute="centerY" id="Szl-R5-1Xr"/>
+                            <constraint firstItem="b9Q-kj-8sN" firstAttribute="trailing" secondItem="Qya-za-oh8" secondAttribute="trailingMargin" id="mUK-sf-jH6"/>
+                            <constraint firstItem="b9Q-kj-8sN" firstAttribute="leading" secondItem="Qya-za-oh8" secondAttribute="leadingMargin" id="xj2-O7-OSv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yAy-lv-tXh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGf-9g-qy1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="302"/>
         </scene>
     </scenes>
 </document>

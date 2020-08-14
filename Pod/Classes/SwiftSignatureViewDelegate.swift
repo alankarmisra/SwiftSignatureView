@@ -9,5 +9,5 @@ import UIKit
 
 public protocol SwiftSignatureViewDelegate: class {
     func swiftSignatureViewDidTapInside(_ view: ISignatureView)
-    func swiftSignatureViewDidPanInside(_ view: ISignatureView, _ pan: UIPanGestureRecognizer)
+    func swiftSignatureViewDidPanInside(_ view: ISignatureView, _ pan: UIGestureRecognizer)
 }

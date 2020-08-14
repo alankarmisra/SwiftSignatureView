@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSignatureView
 
-public class ViewController: UIViewController {
+final class ViewController: UIViewController {
     // Use signatureView.signature to get at the signature image
     @IBOutlet weak var signatureView: SwiftSignatureView!
 

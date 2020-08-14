@@ -11,6 +11,8 @@ import PencilKit
 @available(iOS 13.0, *)
 class PencilKitSignatureView: UIView, ISignatureView {
 
+    private lazy var canvas: PKCanvasView = PKCanvasView(frame: bounds)
+
     // MARK: Public Properties
 
     open weak var delegate: SwiftSignatureViewDelegate?
@@ -64,7 +66,7 @@ class PencilKitSignatureView: UIView, ISignatureView {
         canvas.drawing.image(from: canvas.bounds, scale: 1.0)
     }
 
-  open var isEmpty: Bool {
+    open var isEmpty: Bool {
         get {
             canvas.drawing.bounds.isEmpty
         }
@@ -92,17 +94,32 @@ class PencilKitSignatureView: UIView, ISignatureView {
         initialize()
     }
 
-    private lazy var canvas: PKCanvasView = PKCanvasView(frame: bounds)
-
-    fileprivate func initialize() {
+    private func initialize() {
         canvas.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         canvas.allowsFingerDrawing = true
         addSubview(canvas)
         resetTool()
+        configGestureRecognizer()
     }
 
-    fileprivate func resetTool() {
+    private func resetTool() {
         canvas.tool = PKInkingTool(.pen, color: strokeColor.withAlphaComponent(strokeAlpha), width: maximumStrokeWidth)
+    }
+
+    private func configGestureRecognizer() {
+        let tap: UIGestureRecognizer = UIGestureRecognizer(target: self, action: #selector(PencilKitSignatureView.gesture(_:)))
+        addGestureRecognizer(tap)
+    }
+
+    @objc private func gesture(_ gesture: UIGestureRecognizer) {
+      switch gesture.state {
+      case .began:
+        delegate?.swiftSignatureViewDidTapInside(self)
+      case .failed, .ended, .cancelled:
+        delegate?.swiftSignatureViewDidPanInside(self, gesture)
+      @unknown default:
+        break
+      }
     }
 
 }
