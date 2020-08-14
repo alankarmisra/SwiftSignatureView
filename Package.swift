@@ -10,6 +10,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "SwiftSignatureView", path: "Pod"),
-        .testTarget(name: "SwiftSignatureViewTest", dependencies: ["SwiftSignatureView"] , path: "Example/Tests")
+        .testTarget(name: "SwiftSignatureViewTest", dependencies: ["SwiftSignatureView"], path: "Example/Tests")
     ]
 )
