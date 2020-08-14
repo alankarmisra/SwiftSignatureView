@@ -12,16 +12,15 @@ import SwiftSignatureView
 
 final class PageSheetViewController: UIViewController {
 
-  private lazy var signatureView: SwiftSignatureView = {
-    SwiftSignatureView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.width, height: 200.0)))
-  }()
+    private lazy var signatureView: SwiftSignatureView = {
+        SwiftSignatureView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.width, height: 200.0)))
+    }()
 
-  override func loadView() {
-    super.loadView()
-    signatureView.backgroundColor = UIColor.gray
-    signatureView.translatesAutoresizingMaskIntoConstraints = false
-    self.view.addSubview(signatureView)
-
-  }
+    override func loadView() {
+        super.loadView()
+        signatureView.backgroundColor = UIColor.gray
+        signatureView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(signatureView)
+    }
 
 }

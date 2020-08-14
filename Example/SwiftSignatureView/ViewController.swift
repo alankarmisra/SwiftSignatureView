@@ -34,4 +34,5 @@ final class ViewController: UIViewController {
     @IBAction func didTapRefreshCroppedSignature() {
         croppedSignatureView.image = signatureView.getCroppedSignature()
     }
+
 }

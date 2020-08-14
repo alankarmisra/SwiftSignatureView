@@ -140,12 +140,17 @@ open class SwiftSignatureView: UIView, ISignatureView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createSignatureView()
-     }
+    }
 
-     override public init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         createSignatureView()
-     }
+    }
+
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        (instance as? UIView)?.frame = self.frame
+    }
 
     private func createSignatureView() {
         guard let subview: UIView = instance as? UIView else {
