@@ -16,6 +16,7 @@ public protocol ISignatureView: class {
     var strokeColor: UIColor { get set }
     var strokeAlpha: CGFloat { get set }
     var signature: UIImage? { get set }
+    var isEmpty: Bool { get }
 
     func clear()
     func undo()
@@ -34,7 +35,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
     */
     @IBInspectable public var minimumStrokeWidth: CGFloat {
         get {
-            return instance.minimumStrokeWidth
+            instance.minimumStrokeWidth
         }
 
         set {
@@ -47,7 +48,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
     */
     @IBInspectable public var maximumStrokeWidth: CGFloat {
         get {
-            return instance.maximumStrokeWidth
+            instance.maximumStrokeWidth
         }
 
         set {
@@ -60,7 +61,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
     */
     @IBInspectable public var strokeColor: UIColor {
         get {
-            return instance.strokeColor
+            instance.strokeColor
         }
 
         set {
@@ -73,7 +74,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
     */
     @IBInspectable public var strokeAlpha: CGFloat {
         get {
-            return instance.strokeAlpha
+            instance.strokeAlpha
         }
 
         set {
@@ -86,11 +87,17 @@ open class SwiftSignatureView: UIView, ISignatureView {
     */
     @IBInspectable public var signature: UIImage? {
         get {
-            return instance.signature
+            instance.signature
         }
 
         set {
             instance.signature  = newValue
+        }
+    }
+
+    open var isEmpty: Bool {
+        get {
+            instance.isEmpty
         }
     }
 

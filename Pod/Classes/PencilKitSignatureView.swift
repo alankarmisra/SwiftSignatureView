@@ -61,7 +61,13 @@ class PencilKitSignatureView: UIView, ISignatureView {
 
     open func getCroppedSignature() -> UIImage? {
         // TODO: This should crop the image
-        return canvas.drawing.image(from: canvas.bounds, scale: 1.0)
+        canvas.drawing.image(from: canvas.bounds, scale: 1.0)
+    }
+
+  open var isEmpty: Bool {
+        get {
+            canvas.drawing.bounds.isEmpty
+        }
     }
 
     open func clear() {

@@ -54,23 +54,9 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     /**
     The true backing variable used with core graphics. Private.
     */
-    fileprivate var _signature: UIImage?
-    /**
-    The UIImage representation of the signature. Read/write.
-    */
-    open var signature: UIImage? {
-        get {
-            return _signature
-        }
-        set {
-            _signature = newValue
+    public var signature: UIImage? {
+        didSet {
             self.setNeedsDisplay()
-        }
-    }
-
-    open var isEmpty: Bool {
-        get {
-            return self.currentPath.isEmpty
         }
     }
 
@@ -80,8 +66,14 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
 
     // MARK: Public Methods
 
+    open var isEmpty: Bool {
+        get {
+            self.currentPath.isEmpty
+        }
+    }
+
     public func clear() {
-      self.clear(cache: false)
+        self.clear(cache: false)
     }
 
     open func clear(cache: Bool = false) {
@@ -96,43 +88,43 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     open func undo() {
 
         if cachedPath.isEmpty {
-        return
+            return
         }
 
         //If undo starts from the most top item, skip it
         //and continue verifying from the second last path.
         if cachedPath.count == cacheIndex {
-        cacheIndex -= 1
+            cacheIndex -= 1
         }
 
         cacheIndex -= 1
 
         if cacheIndex < 0 {
-        clear()
-        return
+            clear()
+            return
         }
 
         currentPath = cachedPath[cacheIndex]
-        _signature = nil
+        signature = nil
         self.redraw()
     }
 
     open func redo() {
 
         if cachedPath.isEmpty {
-        return
+            return
         }
 
         if cacheIndex < cachedPath.count - 1 {
-        cacheIndex += 1
+            cacheIndex += 1
         }
 
         if cachedPath.count - 1 < cacheIndex {
-        return
+            return
         }
 
         currentPath = cachedPath[cacheIndex]
-        _signature = nil
+        signature = nil
         self.redraw()
     }
 
@@ -179,13 +171,13 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         let rect = self.bounds
 
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-        if _signature == nil {
-            _signature = UIGraphicsGetImageFromCurrentImageContext()
+        if signature == nil {
+            signature = UIGraphicsGetImageFromCurrentImageContext()
         }
-        _signature?.draw(in: rect)
+        signature?.draw(in: rect)
         let currentPoint = tap.location(in: self)
         drawPointAt(currentPoint, pointSize: 5.0)
-        _signature = UIGraphicsGetImageFromCurrentImageContext()
+        signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
 
@@ -206,11 +198,11 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
             if strokeLength >= 1.0 {
                 let rect = self.bounds
                 UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-                if _signature == nil {
-                    _signature = UIGraphicsGetImageFromCurrentImageContext()
+                if signature == nil {
+                    signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
                 // Draw the prior signature
-                _signature?.draw(in: rect)
+                signature?.draw(in: rect)
 
                 let delta: CGFloat = 0.5
                 let strokeScale: CGFloat = 50 // fudge factor based on empirical tests
@@ -220,7 +212,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
 
                 drawQuadCurve(previousEndPoint, control: previousPoint, end: midPoint, startWidth: previousWidth, endWidth: currentWidth)
 
-                _signature = UIGraphicsGetImageFromCurrentImageContext()
+                signature = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
                 previousPoint = currentPoint
                 previousEndPoint = midPoint
@@ -236,15 +228,15 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     }
 
     fileprivate func distance(_ pt1: CGPoint, pt2: CGPoint) -> CGFloat {
-        return sqrt((pt1.x - pt2.x)*(pt1.x - pt2.x) + (pt1.y - pt2.y)*(pt1.y - pt2.y))
+        sqrt((pt1.x - pt2.x)*(pt1.x - pt2.x) + (pt1.y - pt2.y)*(pt1.y - pt2.y))
     }
 
     fileprivate func CGPointMid(p0: CGPoint, p1: CGPoint) -> CGPoint {
-        return CGPoint(x: (p0.x+p1.x)/2.0, y: (p0.y+p1.y)/2.0)
+        CGPoint(x: (p0.x+p1.x)/2.0, y: (p0.y+p1.y)/2.0)
     }
 
     override open func draw(_ rect: CGRect) {
-        _signature?.draw(in: rect)
+        signature?.draw(in: rect)
     }
 
     fileprivate func getOffsetPoints(p0: CGPoint, p1: CGPoint, width: CGFloat) -> (p0: CGPoint, p1: CGPoint) {
@@ -307,13 +299,13 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     fileprivate func redraw() {
         let rect = self.bounds
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-        if _signature == nil {
-              _signature = UIGraphicsGetImageFromCurrentImageContext()
+        if signature == nil {
+              signature = UIGraphicsGetImageFromCurrentImageContext()
         }
-        _signature?.draw(in: rect)
+        signature?.draw(in: rect)
         currentPath.stroke()
         currentPath.fill()
-        _signature = UIGraphicsGetImageFromCurrentImageContext()
+        signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
     }
