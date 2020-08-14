@@ -70,7 +70,7 @@ class PencilKitSignatureView: UIView, ISignatureView {
         }
     }
 
-    open func clear() {
+    open func clear(cache: Bool) {
         canvas.drawing = PKDrawing()
     }
 

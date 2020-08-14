@@ -18,10 +18,16 @@ public protocol ISignatureView: class {
     var signature: UIImage? { get set }
     var isEmpty: Bool { get }
 
-    func clear()
+    func clear(cache: Bool)
     func undo()
     func redo()
     func getCroppedSignature() -> UIImage?
+}
+
+extension ISignatureView {
+  func clear(cache: Bool = false) {
+    self.clear(cache: cache)
+  }
 }
 
 /// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
@@ -104,8 +110,8 @@ open class SwiftSignatureView: UIView, ISignatureView {
     /**
     Clear the signature.
     */
-    public func clear() {
-        instance.clear()
+    public func clear(cache: Bool = false) {
+        instance.clear(cache: cache)
     }
 
     public func undo() {

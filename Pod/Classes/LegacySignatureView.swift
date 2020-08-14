@@ -72,10 +72,6 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         }
     }
 
-    public func clear() {
-        self.clear(cache: false)
-    }
-
     open func clear(cache: Bool = false) {
         self.currentPath.removeAllPoints()
         cacheIndex = 0
