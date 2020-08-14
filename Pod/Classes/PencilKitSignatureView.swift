@@ -89,9 +89,19 @@ class PencilKitSignatureView: UIView, ISignatureView {
         initialize()
     }
 
-     override public init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
+    }
+
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        resizeSubview()
+    }
+
+    private func resizeSubview() {
+        canvas.frame = self.frame
+        canvas.layoutIfNeeded()
     }
 
     private func initialize() {

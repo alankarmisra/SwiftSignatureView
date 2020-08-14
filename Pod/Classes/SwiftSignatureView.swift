@@ -147,11 +147,6 @@ open class SwiftSignatureView: UIView, ISignatureView {
         createSignatureView()
     }
 
-    override open func layoutIfNeeded() {
-        super.layoutIfNeeded()
-        resizeSubview()
-    }
-
     override open func layoutSubviews() {
         super.layoutSubviews()
         resizeSubview()
@@ -161,7 +156,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
         guard let subview: UIView = instance as? UIView else {
             return
         }
-//        subview.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        subview.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         self.addSubview(subview)
     }
 
@@ -172,7 +167,5 @@ open class SwiftSignatureView: UIView, ISignatureView {
         instance.frame = self.frame
         instance.layoutIfNeeded()
     }
-
-  
 
 }
