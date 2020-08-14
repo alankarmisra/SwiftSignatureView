@@ -147,7 +147,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
         createSignatureView()
     }
 
-    override func layoutIfNeeded() {
+    override open func layoutIfNeeded() {
         super.layoutIfNeeded()
         resizeSubview()
     }
