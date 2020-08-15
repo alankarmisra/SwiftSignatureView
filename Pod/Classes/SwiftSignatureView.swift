@@ -25,13 +25,22 @@ public protocol ISignatureView: class {
 }
 
 extension ISignatureView {
-  func clear(cache: Bool = false) {
-    self.clear(cache: cache)
-  }
+    func clear(cache: Bool = false) {
+        self.clear(cache: cache)
+    }
 }
 
 /// A lightweight, fast and customizable option for capturing fluid, variable-stroke-width signatures within your app.
 open class SwiftSignatureView: UIView, ISignatureView {
+
+    private var viewReady: Bool = false
+
+    private lazy var instance: ISignatureView = {
+        if #available(iOS 13.0, *) {
+            return PencilKitSignatureView(frame: bounds)
+        }
+        return LegacySwiftSignatureView(frame: bounds)
+    }()
 
     public weak var delegate: SwiftSignatureViewDelegate?
 
@@ -130,42 +139,44 @@ open class SwiftSignatureView: UIView, ISignatureView {
         instance.getCroppedSignature()
     }
 
-    private lazy var instance: ISignatureView = {
-        if #available(iOS 13.0, *) {
-            return PencilKitSignatureView(frame: bounds)
-        }
-        return LegacySwiftSignatureView(frame: bounds)
-    }()
-
-    public required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createSignatureView()
+        setNeedsUpdateConstraints()
+        updateConstraintsIfNeeded()
     }
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
         createSignatureView()
+        setNeedsUpdateConstraints()
+        updateConstraintsIfNeeded()
     }
 
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        resizeSubview()
-    }
-
-    private func createSignatureView() {
+    override open func updateConstraintsIfNeeded() {
+        super.updateConstraintsIfNeeded()
+        if viewReady {
+            return
+        }
+        viewReady = true
         guard let subview: UIView = instance as? UIView else {
             return
         }
-        subview.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
-        self.addSubview(subview)
+        self.addConstraint(NSLayoutConstraint(item: subview, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: subview, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: subview, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: subview, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
     }
 
-    private func resizeSubview() {
-        guard let instance = self.instance as? UIView else {
-          return
+    private func createSignatureView() {
+        instance.delegate = self.delegate
+        guard let subview: UIView = instance as? UIView else {
+            return
         }
-        instance.frame = self.frame
-        instance.layoutIfNeeded()
+        subview.backgroundColor = UIColor.red
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        self.addSubview(subview)
     }
 
 }

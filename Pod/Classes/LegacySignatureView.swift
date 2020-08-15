@@ -144,10 +144,12 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     }
 
     public func getCroppedSignature() -> UIImage? {
-        guard let fullRender = signature else { return nil }
-        let bounds = self.scale(currentPath.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2), byFactor: fullRender.scale)
-        guard let imageRef = fullRender.cgImage?.cropping(to: bounds) else { return nil }
-        return UIImage(cgImage: imageRef)
+        return autoreleasepool {
+            guard let fullRender = signature else { return nil }
+            let bounds = self.scale(currentPath.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2), byFactor: fullRender.scale)
+            guard let imageRef = fullRender.cgImage?.cropping(to: bounds) else { return nil }
+            return UIImage(cgImage: imageRef)
+        }
     }
 
     fileprivate func initialize() {

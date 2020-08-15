@@ -9,9 +9,11 @@ import UIKit
 import PencilKit
 
 @available(iOS 13.0, *)
-class PencilKitSignatureView: UIView, ISignatureView {
+open class PencilKitSignatureView: UIView, ISignatureView {
 
-    private lazy var canvas: PKCanvasView = PKCanvasView(frame: bounds)
+    private var viewReady: Bool = false
+
+    private lazy var canvas: PKCanvasView = PKCanvasView(frame: CGRect.zero)
 
     // MARK: Public Properties
 
@@ -50,7 +52,7 @@ class PencilKitSignatureView: UIView, ISignatureView {
     */
     open var signature: UIImage? {
         get {
-            return canvas.drawing.image(from: bounds, scale: 1.0)
+            canvas.drawing.image(from: bounds, scale: 1.0)
         }
 
         set {
@@ -62,8 +64,12 @@ class PencilKitSignatureView: UIView, ISignatureView {
     }
 
     open func getCroppedSignature() -> UIImage? {
-        // TODO: This should crop the image
-        canvas.drawing.image(from: canvas.bounds, scale: 1.0)
+        return autoreleasepool {
+            let fullRender = canvas.drawing.image(from: canvas.bounds, scale: 1.0)
+            let bounds = self.scale(canvas.drawing.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2), byFactor: fullRender.scale)
+            guard let imageRef = fullRender.cgImage?.cropping(to: bounds) else { return nil }
+            return UIImage(cgImage: imageRef)
+        }
     }
 
     open var isEmpty: Bool {
@@ -94,22 +100,27 @@ class PencilKitSignatureView: UIView, ISignatureView {
         initialize()
     }
 
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        resizeSubview()
-    }
-
-    private func resizeSubview() {
-        canvas.frame = self.frame
-        canvas.layoutIfNeeded()
+    override open func updateConstraintsIfNeeded() {
+        super.updateConstraintsIfNeeded()
+        if viewReady {
+            return
+        }
+        viewReady = true
+        addConstraint(NSLayoutConstraint(item: canvas, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: canvas, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: canvas, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: canvas, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
     }
 
     private func initialize() {
-        canvas.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
+        self.backgroundColor = UIColor.black
         canvas.allowsFingerDrawing = true
+        canvas.translatesAutoresizingMaskIntoConstraints = false
         addSubview(canvas)
         resetTool()
         configGestureRecognizer()
+        setNeedsUpdateConstraints()
+        updateConstraintsIfNeeded()
     }
 
     private func resetTool() {
@@ -117,19 +128,27 @@ class PencilKitSignatureView: UIView, ISignatureView {
     }
 
     private func configGestureRecognizer() {
-        let tap: UIGestureRecognizer = UIGestureRecognizer(target: self, action: #selector(PencilKitSignatureView.gesture(_:)))
-        addGestureRecognizer(tap)
+        addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(PencilKitSignatureView.gesture(_:))))
     }
 
     @objc private func gesture(_ gesture: UIGestureRecognizer) {
-      switch gesture.state {
-      case .began:
-        delegate?.swiftSignatureViewDidTapInside(self)
-      case .failed, .ended, .cancelled:
-        delegate?.swiftSignatureViewDidPanInside(self, gesture)
-      @unknown default:
-        break
-      }
+        switch gesture.state {
+        case .began:
+            delegate?.swiftSignatureViewDidTapInside(self)
+        case .failed, .ended, .cancelled:
+            delegate?.swiftSignatureViewDidPanInside(self, gesture)
+        @unknown default:
+            break
+        }
+    }
+
+    fileprivate func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect {
+        var scaledRect = rect
+        scaledRect.origin.x *= factor
+        scaledRect.origin.y *= factor
+        scaledRect.size.width *= factor
+        scaledRect.size.height *= factor
+        return scaledRect
     }
 
 }
