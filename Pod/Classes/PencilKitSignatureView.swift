@@ -115,6 +115,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     private func initialize() {
         self.backgroundColor = UIColor.black
         canvas.allowsFingerDrawing = true
+        canvas.delegate = self
         canvas.translatesAutoresizingMaskIntoConstraints = false
         addSubview(canvas)
         resetTool()
@@ -143,5 +144,14 @@ open class PencilKitSignatureView: UIView, ISignatureView {
         scaledRect.size.height *= factor
         return scaledRect
     }
+
+}
+
+@available(iOS 13.0, *)
+extension PencilKitSignatureView: PKCanvasViewDelegate {
+
+  public func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+    delegate?.swiftSignatureViewDidDraw(self)
+  }
 
 }

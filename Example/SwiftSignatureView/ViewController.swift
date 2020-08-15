@@ -40,8 +40,12 @@ final class ViewController: UIViewController {
 
 extension  ViewController: SwiftSignatureViewDelegate {
 
-  func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
-    print("swiftSignatureViewDidDrawGesture")
-  }
+    func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
+        print("swiftSignatureViewDidDrawGesture")
+    }
+
+    func swiftSignatureViewDidDraw(_ view: ISignatureView) {
+        print("swiftSignatureViewDidDraw")
+    }
 
 }

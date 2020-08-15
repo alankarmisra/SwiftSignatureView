@@ -9,4 +9,5 @@ import UIKit
 
 public protocol SwiftSignatureViewDelegate: class {
     func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer)
+    func swiftSignatureViewDidDraw(_ view: ISignatureView)
 }
