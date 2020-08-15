@@ -17,6 +17,7 @@ final class ViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+      signatureView.delegate = self
     }
 
     @IBAction func didTapClear() {
@@ -34,5 +35,13 @@ final class ViewController: UIViewController {
     @IBAction func didTapRefreshCroppedSignature() {
         croppedSignatureView.image = signatureView.getCroppedSignature()
     }
+
+}
+
+extension  ViewController: SwiftSignatureViewDelegate {
+
+  func swiftSignatureViewDidDrawGesture(_ view: ISignatureView, _ tap: UIGestureRecognizer) {
+    print("swiftSignatureViewDidDrawGesture")
+  }
 
 }

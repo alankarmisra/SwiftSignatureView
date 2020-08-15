@@ -42,7 +42,11 @@ open class SwiftSignatureView: UIView, ISignatureView {
         return LegacySwiftSignatureView(frame: bounds)
     }()
 
-    public weak var delegate: SwiftSignatureViewDelegate?
+    public weak var delegate: SwiftSignatureViewDelegate? {
+      didSet {
+        instance.delegate = self.delegate
+      }
+    }
 
     /**
     The minimum stroke width.
@@ -169,11 +173,9 @@ open class SwiftSignatureView: UIView, ISignatureView {
     }
 
     private func createSignatureView() {
-        instance.delegate = self.delegate
         guard let subview: UIView = instance as? UIView else {
             return
         }
-        subview.backgroundColor = UIColor.red
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin, .flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         self.addSubview(subview)

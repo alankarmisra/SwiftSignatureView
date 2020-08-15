@@ -179,7 +179,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
 
-        self.delegate?.swiftSignatureViewDidTapInside(self)
+        self.delegate?.swiftSignatureViewDidDrawGesture(self, tap)
     }
 
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -222,7 +222,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
             break
         }
 
-        self.delegate?.swiftSignatureViewDidPanInside(self, pan)
+        self.delegate?.swiftSignatureViewDidDrawGesture(self, pan)
     }
 
     fileprivate func distance(_ pt1: CGPoint, pt2: CGPoint) -> CGFloat {

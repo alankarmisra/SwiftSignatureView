@@ -128,18 +128,11 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     }
 
     private func configGestureRecognizer() {
-        addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(PencilKitSignatureView.gesture(_:))))
+        canvas.drawingGestureRecognizer.addTarget(self, action: #selector(PencilKitSignatureView.gesture(_:)))
     }
 
     @objc private func gesture(_ gesture: UIGestureRecognizer) {
-        switch gesture.state {
-        case .began:
-            delegate?.swiftSignatureViewDidTapInside(self)
-        case .failed, .ended, .cancelled:
-            delegate?.swiftSignatureViewDidPanInside(self, gesture)
-        @unknown default:
-            break
-        }
+        delegate?.swiftSignatureViewDidDrawGesture(self, gesture)
     }
 
     fileprivate func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect {
