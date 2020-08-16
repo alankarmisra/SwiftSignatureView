@@ -11,6 +11,7 @@ import PencilKit
 
 public protocol ISignatureView: class {
     var delegate: SwiftSignatureViewDelegate? { get set }
+    var scale: CGFloat { get set }
     var maximumStrokeWidth: CGFloat { get set }
     var minimumStrokeWidth: CGFloat { get set }
     var strokeColor: UIColor { get set }
@@ -46,6 +47,16 @@ open class SwiftSignatureView: UIView, ISignatureView {
       didSet {
         instance.delegate = self.delegate
       }
+    }
+
+    @IBInspectable public var scale: CGFloat {
+        get {
+            instance.scale
+        }
+
+        set {
+            instance.scale = newValue
+        }
     }
 
     /**

@@ -13,6 +13,8 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     // MARK: Public Properties
     open weak var delegate: SwiftSignatureViewDelegate?
 
+    open var scale: CGFloat = 10.0
+
     /**
     The maximum stroke width.
     */
