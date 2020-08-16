@@ -86,6 +86,9 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     open func undo() {
 
         if cachedPath.isEmpty {
+            clear()
+            signature = nil
+            self.redraw()
             return
         }
 
@@ -133,6 +136,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
 
     deinit {
         clear()
+        signature = nil
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -181,6 +185,8 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
 
+        pushCurrentBelzierPath(currentPath)
+
         self.delegate?.swiftSignatureViewDidDrawGesture(self, tap)
     }
 
@@ -193,11 +199,15 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     @objc public func pan(_ pan: UIPanGestureRecognizer) {
         switch pan.state {
         case .began, .changed:
+
             let currentPoint = pan.location(in: self)
             let strokeLength = distance(previousPoint, pt2: currentPoint)
+
             if strokeLength >= 1.0 {
+
                 let rect = self.bounds
                 UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+
                 if signature == nil {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
                 }
@@ -221,6 +231,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
             }
 
         default:
+            pushCurrentBelzierPath(currentPath)
             break
         }
 
@@ -288,12 +299,17 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
 
     fileprivate func drawPointAt(_ point: CGPoint, pointSize: CGFloat = 1.0) {
         let signatureColor = strokeColor.withAlphaComponent(strokeAlpha)
+        signatureColor.setFill()
         signatureColor.setStroke()
-        currentPath.lineWidth = pointSize
-        currentPath.lineCapStyle = CGLineCap.round
         currentPath.move(to: point)
-        currentPath.addLine(to: point)
+        currentPath.addArc(withCenter: point, radius: pointSize, startAngle: 0, endAngle: .pi * 2, clockwise: true)
         currentPath.stroke()
+        currentPath.fill()
+//        currentPath.lineWidth = pointSize
+//        currentPath.lineCapStyle = CGLineCap.round
+//        currentPath.move(to: point)
+//        currentPath.addLine(to: point)
+//        currentPath.stroke()
     }
 
     fileprivate func redraw() {
