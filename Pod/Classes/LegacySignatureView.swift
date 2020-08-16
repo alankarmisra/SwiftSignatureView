@@ -18,7 +18,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     /**
     The maximum stroke width.
     */
-    open var maximumStrokeWidth: CGFloat = 4 {
+    open var maximumStrokeWidth: CGFloat = 2 {
         didSet {
             if maximumStrokeWidth < minimumStrokeWidth || maximumStrokeWidth <= 0 {
                 maximumStrokeWidth = oldValue
@@ -180,7 +180,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         }
         signature?.draw(in: rect)
         let currentPoint = tap.location(in: self)
-        drawPointAt(currentPoint, pointSize: 5.0)
+        drawPointAt(currentPoint, pointSize: 2.0)
         signature = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.setNeedsDisplay()
