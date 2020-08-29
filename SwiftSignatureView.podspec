@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftSignatureView"
-  s.version          = "3.0.1"
+  s.version          = "3.2.0"
   s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app. Uses PencilKit for iOS13+"
 
   s.description      = <<-DESC

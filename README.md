@@ -9,6 +9,16 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
+## Version 3.2.0 
+- _WARNING_: This update changes the _SwiftSignatureViewDelegate_ interface. Use the _swiftSignatureViewDidDrawGesture_ to receive gesture events. In PencilKit (iOS13+) you get an additional _swiftSignatureViewDidDraw_ event when the user ends a drawing sequence with the tool they were using.
+- Added Undo/Redo.
+- Added _isEmpty_ to determine if the signature canvas is empty.
+- Fixed the constraints of the demo app. 
+- Views and canvas are configured internally only using constraint layout.
+- Swiftlint fixes applied.
+- Added a page sheet version explaining how to use the library purely by code.
+- Added crop function for the PencilKit version (with resolution of the signature sorted).
+
 ## Version 3.0.0 
 - SwiftSignatureView now uses PencilKit for iOS13+ to provide a native and even more fluid signature experience, including a natural integration with the Apple Pencil. 
 
@@ -110,7 +120,7 @@ Add the following lines to your Package.swift file (or just use the Package Mana
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "3.0.0")
+    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "3.2.0")
 ]
 ```
 
