@@ -124,7 +124,7 @@ dependencies: [
 ]
 ```
 
-## Author
+## Questions? Write in to:
 
 Alankar Misra, alankarmisra@gmail.com
 
