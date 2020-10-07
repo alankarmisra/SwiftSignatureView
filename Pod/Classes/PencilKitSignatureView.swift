@@ -13,7 +13,17 @@ open class PencilKitSignatureView: UIView, ISignatureView {
 
     private var viewReady: Bool = false
 
-    private lazy var canvas: PKCanvasView = PKCanvasView(frame: CGRect.zero)
+    private lazy var canvas: PKCanvasView = {
+        let canvas = PKCanvasView(frame: CGRect.zero)
+        canvas.backgroundColor = .clear
+        canvas.isOpaque = false
+        canvas.overrideUserInterfaceStyle = .light
+        canvas.allowsFingerDrawing = true
+        canvas.delegate = self
+        canvas.translatesAutoresizingMaskIntoConstraints = false
+       
+        return canvas
+    }()
 
     // MARK: Public Properties
 
@@ -117,10 +127,6 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     }
 
     private func initialize() {
-        self.backgroundColor = UIColor.black
-        canvas.allowsFingerDrawing = true
-        canvas.delegate = self
-        canvas.translatesAutoresizingMaskIntoConstraints = false
         addSubview(canvas)
         resetTool()
         configGestureRecognizer()
