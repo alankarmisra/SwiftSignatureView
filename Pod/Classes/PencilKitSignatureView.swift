@@ -20,6 +20,12 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     open weak var delegate: SwiftSignatureViewDelegate?
 
     open var scale: CGFloat = 10.0
+    
+    open override var backgroundColor: UIColor? {
+        didSet {
+            self.canvas.backgroundColor = self.backgroundColor
+        }
+    }
 
     /**
     The maximum stroke width.

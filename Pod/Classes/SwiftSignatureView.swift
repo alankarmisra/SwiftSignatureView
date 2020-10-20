@@ -124,6 +124,12 @@ open class SwiftSignatureView: UIView, ISignatureView {
             instance.signature  = newValue
         }
     }
+    
+    open override var backgroundColor: UIColor? {
+        didSet {
+            (self.instance as? UIView)?.backgroundColor = self.backgroundColor
+        }
+    }
 
     open var isEmpty: Bool {
         get {
