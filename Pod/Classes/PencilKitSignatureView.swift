@@ -67,12 +67,16 @@ open class PencilKitSignatureView: UIView, ISignatureView {
 
     open func getCroppedSignature() -> UIImage? {
         return autoreleasepool {
-            let fullRender = canvas.drawing.image(from: canvas.bounds, scale: scale)
-            let bounds = self.scale(
-                canvas.drawing.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2),
-                byFactor: fullRender.scale)
-            guard let imageRef: CGImage = fullRender.cgImage?.cropping(to: bounds) else { return nil }
-            return UIImage(cgImage: imageRef, scale: scale, orientation: fullRender.imageOrientation)
+            var image: UIImage?
+            traitCollection.performAsCurrent {
+              let fullRender = canvas.drawing.image(from: canvas.bounds, scale: scale)
+              let bounds = self.scale(
+                  canvas.drawing.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2),
+                  byFactor: fullRender.scale)
+              guard let imageRef: CGImage = fullRender.cgImage?.cropping(to: bounds) else { return }
+              image = UIImage(cgImage: imageRef, scale: scale, orientation: fullRender.imageOrientation)
+          }
+          return image
         }
     }
 
