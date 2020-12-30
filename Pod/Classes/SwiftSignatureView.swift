@@ -18,6 +18,7 @@ public protocol ISignatureView: class {
     var strokeAlpha: CGFloat { get set }
     var signature: UIImage? { get set }
     var isEmpty: Bool { get }
+    var drawingGestureRecognizer: UIGestureRecognizer? { get }
 
     func clear(cache: Bool)
     func undo()
@@ -131,6 +132,11 @@ open class SwiftSignatureView: UIView, ISignatureView {
         }
     }
 
+    /// The gesture recognizer that the canvas uses to track touch events.
+    open var drawingGestureRecognizer: UIGestureRecognizer? {
+        return instance.drawingGestureRecognizer
+    }
+    
     /**
     Clear the signature.
     */
