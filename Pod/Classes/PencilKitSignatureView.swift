@@ -20,6 +20,11 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     open weak var delegate: SwiftSignatureViewDelegate?
 
     open var scale: CGFloat = 10.0
+    
+    /// The gesture recognizer that the canvas uses to track touch events.
+    open var drawingGestureRecognizer: UIGestureRecognizer? {
+        return canvas.drawingGestureRecognizer
+    }
 
     /**
     The maximum stroke width.
@@ -93,7 +98,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     open func redo() {
         canvas.undoManager?.redo()
     }
-
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
