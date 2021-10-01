@@ -9,7 +9,7 @@
 import UIKit
 import PencilKit
 
-public protocol ISignatureView: class {
+public protocol ISignatureView: AnyObject {
     var delegate: SwiftSignatureViewDelegate? { get set }
     var scale: CGFloat { get set }
     var maximumStrokeWidth: CGFloat { get set }
