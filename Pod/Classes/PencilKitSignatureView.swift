@@ -145,7 +145,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
         delegate?.swiftSignatureViewDidDrawGesture(self, gesture)
     }
 
-    fileprivate func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect {
+    public func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect {
         var scaledRect = rect
         scaledRect.origin.x *= factor
         scaledRect.origin.y *= factor
