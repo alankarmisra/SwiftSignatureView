@@ -13,7 +13,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
 
     private var viewReady: Bool = false
 
-    private lazy var canvas: PKCanvasView = PKCanvasView(frame: CGRect.zero)
+    public lazy var canvas: PKCanvasView = PKCanvasView(frame: CGRect.zero)
 
     // MARK: Public Properties
 
