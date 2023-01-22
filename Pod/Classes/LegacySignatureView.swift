@@ -43,7 +43,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     /**
     The stroke color.
     */
-    open var strokeColor: UIColor = UIColor.black
+    open var strokeColor: UIColor = .black
 
     /**
     The stroke alpha. Prefer higher values to prevent stroke segments from showing through.
@@ -53,6 +53,15 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
             if strokeAlpha <= 0.0 || strokeAlpha > 1.0 {
                 strokeAlpha = oldValue
             }
+        }
+    }
+    
+    /**
+     The background color
+     */
+    open var bgColor: UIColor = .clear {
+        didSet {
+            backgroundColor = bgColor
         }
     }
 

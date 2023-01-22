@@ -53,6 +53,15 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     The stroke alpha. 
     */
     open var strokeAlpha: CGFloat = 1
+    
+    /**
+     The background color
+     */
+    open var bgColor: UIColor = .clear {
+        didSet {
+            canvas.backgroundColor = bgColor
+        }
+    }
 
     /**
     The UIImage representation of the signature. Read/write.
