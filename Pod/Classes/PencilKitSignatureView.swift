@@ -68,7 +68,11 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     */
     open var signature: UIImage? {
         get {
-            canvas.drawing.image(from: bounds, scale: 1.0)
+            var image: UIImage?
+            traitCollection.performAsCurrent {
+                image = canvas.drawing.image(from: bounds, scale: UIScreen.main.scale)
+            }
+            return image
         }
 
         set {
@@ -135,6 +139,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     }
 
     private func initialize() {
+        self.overrideUserInterfaceStyle = .light
         self.backgroundColor = UIColor.black
         canvas.allowsFingerDrawing = true
         canvas.delegate = self
