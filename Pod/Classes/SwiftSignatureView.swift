@@ -14,6 +14,7 @@ public protocol ISignatureView: AnyObject {
     var scale: CGFloat { get set }
     var maximumStrokeWidth: CGFloat { get set }
     var minimumStrokeWidth: CGFloat { get set }
+    var bgColor: UIColor { get set }
     var strokeColor: UIColor { get set }
     var strokeAlpha: CGFloat { get set }
     var signature: UIImage? { get set }
@@ -86,7 +87,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
             instance.maximumStrokeWidth = newValue
         }
     }
-
+    
     /**
     The stroke color.
     */
@@ -99,6 +100,20 @@ open class SwiftSignatureView: UIView, ISignatureView {
             instance.strokeColor = newValue
         }
     }
+    
+    /**
+     The background color.
+     */
+    @IBInspectable public var bgColor: UIColor {
+        get {
+            instance.bgColor
+        }
+        
+        set {
+            instance.bgColor = newValue
+        }
+    }
+
 
     /**
     The stroke alpha. Prefer higher values to prevent stroke segments from showing through.
