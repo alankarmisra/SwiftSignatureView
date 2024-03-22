@@ -92,7 +92,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
                   canvas.drawing.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2),
                   byFactor: fullRender.scale)
               guard let imageRef: CGImage = fullRender.cgImage?.cropping(to: bounds) else { return }
-              image = UIImage(cgImage: imageRef, scale: scale, orientation: fullRender.imageOrientation)
+              image = UIImage(cgImage: imageRef, scale: scale, orientation: fullRender.imageOrientation)             
           }
           return image
         }
