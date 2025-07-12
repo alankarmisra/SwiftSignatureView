@@ -10,48 +10,48 @@ import PencilKit
 
 @available(iOS 13.0, *)
 open class PencilKitSignatureView: UIView, ISignatureView {
-
+    
     private var viewReady: Bool = false
-
+    
     private lazy var canvas: PKCanvasView = PKCanvasView(frame: CGRect.zero)
-
+    
     // MARK: Public Properties
-
+    
     open weak var delegate: SwiftSignatureViewDelegate?
-
+    
     open var scale: CGFloat = 10.0
     
     /// The gesture recognizer that the canvas uses to track touch events.
     open var drawingGestureRecognizer: UIGestureRecognizer? {
         return canvas.drawingGestureRecognizer
     }
-
+    
     /**
-    The maximum stroke width.
-    */
+     The maximum stroke width.
+     */
     open var maximumStrokeWidth: CGFloat = 4 {
         didSet {
             resetTool()
         }
     }
-
+    
     /**
-    The minimum stroke width (ignored in PencilKit)
-    */
+     The minimum stroke width (ignored in PencilKit)
+     */
     open var minimumStrokeWidth: CGFloat = 1
-
+    
     /**
-    The stroke color.
-    */
+     The stroke color.
+     */
     open var strokeColor: UIColor = UIColor.black {
         didSet {
             resetTool()
         }
     }
-
+    
     /**
-    The stroke alpha. 
-    */
+     The stroke alpha. 
+     */
     open var strokeAlpha: CGFloat = 1
     
     /**
@@ -62,19 +62,23 @@ open class PencilKitSignatureView: UIView, ISignatureView {
             canvas.backgroundColor = bgColor
         }
     }
-
+    
     /**
-    The UIImage representation of the signature. Read/write.
-    */
+     The UIImage representation of the signature. Read/write.
+     */
     open var signature: UIImage? {
         get {
             var image: UIImage?
             traitCollection.performAsCurrent {
+#if os(visionOS)
+                image = canvas.drawing.image(from: bounds, scale: 1.0)
+#else
                 image = canvas.drawing.image(from: bounds, scale: UIScreen.main.scale)
+#endif
             }
             return image
         }
-
+        
         set {
             guard let data = newValue?.pngData(), let drawing = try? PKDrawing(data: data) else {
                 return
@@ -82,36 +86,36 @@ open class PencilKitSignatureView: UIView, ISignatureView {
             canvas.drawing = drawing
         }
     }
-
+    
     open func getCroppedSignature() -> UIImage? {
         return autoreleasepool {
             var image: UIImage?
             traitCollection.performAsCurrent {
-              let fullRender = canvas.drawing.image(from: canvas.bounds, scale: scale)
-              let bounds = self.scale(
-                  canvas.drawing.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2),
-                  byFactor: fullRender.scale)
-              guard let imageRef: CGImage = fullRender.cgImage?.cropping(to: bounds) else { return }
-              image = UIImage(cgImage: imageRef, scale: scale, orientation: fullRender.imageOrientation)             
-          }
-          return image
+                let fullRender = canvas.drawing.image(from: canvas.bounds, scale: scale)
+                let bounds = self.scale(
+                    canvas.drawing.bounds.insetBy(dx: -maximumStrokeWidth/2, dy: -maximumStrokeWidth/2),
+                    byFactor: fullRender.scale)
+                guard let imageRef: CGImage = fullRender.cgImage?.cropping(to: bounds) else { return }
+                image = UIImage(cgImage: imageRef, scale: scale, orientation: fullRender.imageOrientation)             
+            }
+            return image
         }
     }
-
+    
     open var isEmpty: Bool {
         get {
             canvas.drawing.bounds.isEmpty
         }
     }
-
+    
     open func clear(cache: Bool) {
         canvas.drawing = PKDrawing()
     }
-
+    
     open func undo() {
         canvas.undoManager?.undo()
     }
-
+    
     open func redo() {
         canvas.undoManager?.redo()
     }
@@ -120,12 +124,12 @@ open class PencilKitSignatureView: UIView, ISignatureView {
         super.init(coder: aDecoder)
         initialize()
     }
-
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
     }
-
+    
     override open func updateConstraintsIfNeeded() {
         super.updateConstraintsIfNeeded()
         if viewReady {
@@ -137,11 +141,19 @@ open class PencilKitSignatureView: UIView, ISignatureView {
         addConstraint(NSLayoutConstraint(item: canvas, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: canvas, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0))
     }
-
+    
     private func initialize() {
         self.overrideUserInterfaceStyle = .light
         self.backgroundColor = UIColor.black
-        canvas.allowsFingerDrawing = true
+#if os(visionOS)
+        canvas.drawingPolicy = .anyInput
+#else
+        if #available(iOS 17.0, *) {
+            canvas.drawingPolicy = .anyInput
+        } else {
+            canvas.allowsFingerDrawing = true
+        }
+#endif
         canvas.delegate = self
         canvas.translatesAutoresizingMaskIntoConstraints = false
         addSubview(canvas)
@@ -150,19 +162,19 @@ open class PencilKitSignatureView: UIView, ISignatureView {
         setNeedsUpdateConstraints()
         updateConstraintsIfNeeded()
     }
-
+    
     private func resetTool() {
         canvas.tool = PKInkingTool(.pen, color: strokeColor.withAlphaComponent(strokeAlpha), width: maximumStrokeWidth)
     }
-
+    
     private func configGestureRecognizer() {
         canvas.drawingGestureRecognizer.addTarget(self, action: #selector(PencilKitSignatureView.gesture(_:)))
     }
-
+    
     @objc private func gesture(_ gesture: UIGestureRecognizer) {
         delegate?.swiftSignatureViewDidDrawGesture(self, gesture)
     }
-
+    
     fileprivate func scale(_ rect: CGRect, byFactor factor: CGFloat) -> CGRect {
         var scaledRect = rect
         scaledRect.origin.x *= factor
@@ -171,14 +183,14 @@ open class PencilKitSignatureView: UIView, ISignatureView {
         scaledRect.size.height *= factor
         return scaledRect
     }
-
+    
 }
 
 @available(iOS 13.0, *)
 extension PencilKitSignatureView: PKCanvasViewDelegate {
-
-  public func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
-    delegate?.swiftSignatureViewDidDraw(self)
-  }
-
+    
+    public func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+        delegate?.swiftSignatureViewDidDraw(self)
+    }
+    
 }
