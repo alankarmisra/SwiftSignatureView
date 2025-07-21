@@ -15,6 +15,14 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
 
     open var scale: CGFloat = 10.0
     
+    private var currentScreenScale: CGFloat {
+        #if os(visionOS)
+        return self.traitCollection.displayScale
+        #else
+        return UIScreen.main.scale
+        #endif
+    }
+    
     /// The gesture recognizer that the canvas uses to track touch events.
     private(set) open var drawingGestureRecognizer: UIGestureRecognizer?
 
@@ -188,7 +196,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     @objc func tap(_ tap: UITapGestureRecognizer) {
         let rect = self.bounds
 
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, currentScreenScale)
         if signature == nil {
             signature = UIGraphicsGetImageFromCurrentImageContext()
         }
@@ -220,7 +228,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
             if strokeLength >= 1.0 {
 
                 let rect = self.bounds
-                UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+                UIGraphicsBeginImageContextWithOptions(rect.size, false, currentScreenScale)
 
                 if signature == nil {
                     signature = UIGraphicsGetImageFromCurrentImageContext()
@@ -328,7 +336,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
 
     fileprivate func redraw() {
         let rect = self.bounds
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, currentScreenScale)
         if signature == nil {
               signature = UIGraphicsGetImageFromCurrentImageContext()
         }
