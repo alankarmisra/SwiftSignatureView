@@ -11,6 +11,7 @@ import SwiftUI
 
 @available(iOS 13, *)
 @available(tvOS 13, *)
+@available(visionOS 1.0, *)
 public struct SignatureView: UIViewRepresentable {
     public enum Action: Sendable {
         case clear
@@ -55,6 +56,7 @@ public struct SignatureView: UIViewRepresentable {
 // MARK: - UIViewRepresentable Conformance
 @available(iOS 13, *)
 @available(tvOS 13, *)
+@available(visionOS 1.0, *)
 extension SignatureView {
     public func makeUIView(context: Context) -> SwiftSignatureView {
         let view = SwiftSignatureView()
@@ -123,6 +125,7 @@ extension SignatureView {
 // MARK: - View Modifiers
 @available(iOS 13, *)
 @available(tvOS 13, *)
+@available(visionOS 1.0, *)
 public extension SignatureView {
     func strokeColor(_ color: UIColor) -> Self {
         var copy = self
@@ -161,8 +164,10 @@ public extension SignatureView {
     }
 }
 
+// MARK: - Preview
 @available(iOS 17, *)
-@available(tvOS 13, *)
+@available(tvOS 17, *)
+@available(visionOS 1.0, *)
 #Preview {
     @Previewable @State var action: SignatureView.Action?
     @Previewable @State var canUndo: Bool = false
