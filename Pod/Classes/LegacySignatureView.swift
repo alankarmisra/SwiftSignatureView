@@ -154,7 +154,7 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
     }
 
     open var canRedo: Bool {
-        !cachedPath.isEmpty
+        cacheIndex < cachedPath.count
     }
 
     // MARK: Private Methods
