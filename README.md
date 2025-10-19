@@ -9,6 +9,12 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 ![Sample](http://i.imgur.com/dnXs4ND.png)
 
+## Version 3.2.2
+- Updated the Swift Package version to 5.9
+- Updated the platform minimums to v12 since older is now deprecated
+- Added VisionOS support
+- Added a Preview to the SwiftSignatureView
+
 ## Version 3.2.1
 - Minor bug fixes. 
 
