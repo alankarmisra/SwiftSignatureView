@@ -7,13 +7,16 @@
 ## Description
 SwiftSignatureView is a lightweight, fast and customizable option for capturing signatures within your app. You can retrieve the signature as a UIImage. With code that varies the pen width based on the speed of the finger movement, the view generates fluid, natural looking signatures. *And now, with iOS13+, SwiftSignatureView automatically uses PencilKit to provide a native and even more fluid signature experience, including a natural integration with the Apple Pencil which makes SwiftSignatureView even better!*
 
-![Sample](http://i.imgur.com/dnXs4ND.png)
+<img width="432" height="243" alt="swiftsignatureview" src="https://github.com/user-attachments/assets/c3601521-8d80-419a-9e7e-5d961f3d0425" />
 
 ## Version 3.2.2
 - Updated the Swift Package version to 5.9
 - Updated the platform minimums to v12 since older is now deprecated
 - Added VisionOS support
-- Added a Preview to the SwiftSignatureView
+  
+
+<img width="800" height="570" alt="visionos" src="https://github.com/user-attachments/assets/bc37fe03-1d07-479d-bce6-9dd88c76db38" />
+
 
 ## Version 3.2.1
 - Minor bug fixes. 
