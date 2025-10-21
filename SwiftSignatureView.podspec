@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SwiftSignatureView"
-  s.version          = "3.2.4"
+  s.version          = "3.2.5"
   s.summary          = "A lightweight, fast and customizable option for capturing signatures within your app. Uses PencilKit for iOS13+"
 
   s.description      = <<-DESC
@@ -18,4 +18,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
+s.pod_target_xcconfig = { 
+    'DEFINES_MODULE' => 'YES'
+  }
+  
+  # This configures the test App target
+  s.user_target_xcconfig = {
+    'GENERATE_INFOPLIST_FILE' => 'YES'
+  }
 end

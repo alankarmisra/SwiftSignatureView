@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053CE5DF08656622B1DE7FB4169C0AB5 /* Pods-SwiftSignatureView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C248916A134BFD8DEB51BE7FBB9FACC /* Pods-SwiftSignatureView_Example-dummy.m */; };
+		1C5905A75D18469D4A8B1816275A7219 /* Pods-SwiftSignatureView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DBDB97586A5005C71DE78E685AE7BA /* Pods-SwiftSignatureView_Tests-dummy.m */; };
 		2492F5A1B9A25DE9BC81300178563EB7 /* SwiftSignatureView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CAE81957859C5F9D12B4C7DAA314F7 /* SwiftSignatureView-dummy.m */; };
 		34145A1F33EA3DCDAF874ED503336190 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		3C3827197C6DB4EED9963A0D550FC026 /* Pods-SwiftSignatureView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DBDB97586A5005C71DE78E685AE7BA /* Pods-SwiftSignatureView_Tests-dummy.m */; };
-		46E54C2D37C973A9F26C556E6EF13AF4 /* Pods-SwiftSignatureView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C248916A134BFD8DEB51BE7FBB9FACC /* Pods-SwiftSignatureView_Example-dummy.m */; };
 		53369DA7CA835ACB6BDD3FB716BACF72 /* SwiftSignatureViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAB04FE257F56D083718B711381D9A /* SwiftSignatureViewDelegate.swift */; };
 		5D3F0A1D588B63B2FB85DDCF1A945AB5 /* PencilKitSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A970F08ADFCBA371D9A654AA7FD3682 /* PencilKitSignatureView.swift */; };
-		7502258414559D3F3F2C767190745003 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5F2F10F7DF1560019840EF16EE4D2A9E /* Pods-SwiftSignatureView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD9548F7C31F50ADFE4D38D5C2DF5BE1 /* Pods-SwiftSignatureView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97193D978BDB057FB5E8097BFBDD4986 /* Pods-SwiftSignatureView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCA8AE6A15B07437002427AB2BB5560B /* Pods-SwiftSignatureView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCDB3A46202BCFCFC8DD44449C0515DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		C6B8487DB3B876FBA7EADE3748DB1590 /* SwiftSignatureView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F108D7EF08C772C1C724F567CE7626 /* SwiftSignatureView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C98A8CA64F1355708145D8AFAD38B6AD /* LegacySignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605B3B6ED1E0AEBAAF9BBB7755575B7 /* LegacySignatureView.swift */; };
 		CE58C0E36EF59E6160C27D61B8BF49EF /* SwiftSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2D82204A9BD1D1EF51757D40DB0771 /* SwiftSignatureView.swift */; };
-		E8838FA223393F8D1D0BFAA659EA6AB0 /* Pods-SwiftSignatureView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCA8AE6A15B07437002427AB2BB5560B /* Pods-SwiftSignatureView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E90E2A5615FF5D775106E584207E107E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		FD13FF1A4EC6EFA4F42F0F95CEA97178 /* Pods-SwiftSignatureView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD9548F7C31F50ADFE4D38D5C2DF5BE1 /* Pods-SwiftSignatureView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E84BE75B4F72E0C01EF77C968B1588B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2F09A63C040AEA872C621429BF1C6023 /* PBXContainerItemProxy */ = {
+		F08104369CB705B4028712D9019FB4EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 77FF5E066D2B1955FFA0177ECFA4DF75;
 			remoteInfo = SwiftSignatureView;
 		};
-		83AB3B285732BAA0000DB798B5EAC289 /* PBXContainerItemProxy */ = {
+		F0A7BC2590EF2297D13EB3F6283CE3B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -42,19 +42,19 @@
 /* Begin PBXFileReference section */
 		04E315EAC60CAB1E9AC14D59588D81D5 /* Pods-SwiftSignatureView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftSignatureView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0C248916A134BFD8DEB51BE7FBB9FACC /* Pods-SwiftSignatureView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftSignatureView_Example-dummy.m"; sourceTree = "<group>"; };
-		100555F0646AB00345D52F62FB28F286 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		100555F0646AB00345D52F62FB28F286 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		16DBDB97586A5005C71DE78E685AE7BA /* Pods-SwiftSignatureView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftSignatureView_Tests-dummy.m"; sourceTree = "<group>"; };
 		1818C39AD7DAD6A9C1B2AFA9CBCD213E /* SwiftSignatureView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSignatureView-prefix.pch"; sourceTree = "<group>"; };
-		1DCCE24B7AC94316262E7281F935FD6B /* SwiftSignatureView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSignatureView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DCCE24B7AC94316262E7281F935FD6B /* SwiftSignatureView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSignatureView.framework; path = SwiftSignatureView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20D2B5649398D757F253BBA1190AB3A1 /* SwiftSignatureView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftSignatureView-Info.plist"; sourceTree = "<group>"; };
-		299E8ED1906569F0DA701ECE5C4D6A19 /* Pods_SwiftSignatureView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSignatureView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		299E8ED1906569F0DA701ECE5C4D6A19 /* Pods_SwiftSignatureView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftSignatureView_Example.framework; path = "Pods-SwiftSignatureView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F108D7EF08C772C1C724F567CE7626 /* SwiftSignatureView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSignatureView-umbrella.h"; sourceTree = "<group>"; };
 		2E47D644106BF3DCFEE4DA775F603BF5 /* Pods-SwiftSignatureView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftSignatureView_Example.modulemap"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		38CAB04FE257F56D083718B711381D9A /* SwiftSignatureViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSignatureViewDelegate.swift; path = Pod/Classes/SwiftSignatureViewDelegate.swift; sourceTree = "<group>"; };
 		3A2D82204A9BD1D1EF51757D40DB0771 /* SwiftSignatureView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSignatureView.swift; path = Pod/Classes/SwiftSignatureView.swift; sourceTree = "<group>"; };
 		4605B3B6ED1E0AEBAAF9BBB7755575B7 /* LegacySignatureView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacySignatureView.swift; path = Pod/Classes/LegacySignatureView.swift; sourceTree = "<group>"; };
-		4C6973DEAD6A5B1F4BCA0B27D29D59EF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4C6973DEAD6A5B1F4BCA0B27D29D59EF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		6BB3000201EEADD47E2CB689F5CCF5C8 /* Pods-SwiftSignatureView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftSignatureView_Example-Info.plist"; sourceTree = "<group>"; };
 		6DE64162AA8AC53C41CC719B0AFD2CBF /* Pods-SwiftSignatureView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftSignatureView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7011A83ED336C222BFE89D1E5A80E267 /* Pods-SwiftSignatureView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftSignatureView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,9 +64,9 @@
 		8A54406FB5CE378EE00C1E3690FC40E0 /* Pods-SwiftSignatureView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftSignatureView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8DCB2D0A57BFA6EBEF38750E12653515 /* Pods-SwiftSignatureView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftSignatureView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D63E473B34FF30EB23E010B35846C5F /* Pods-SwiftSignatureView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftSignatureView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D99698375EDA38B45C62F5E7C5E5665 /* Pods-SwiftSignatureView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftSignatureView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A5C7B2B92B3DB7303CE1510A7F84274D /* SwiftSignatureView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SwiftSignatureView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5C7B2B92B3DB7303CE1510A7F84274D /* SwiftSignatureView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SwiftSignatureView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B52DC7998DBC5DDA1ABB3E87170B3F98 /* SwiftSignatureView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSignatureView.release.xcconfig; sourceTree = "<group>"; };
 		BA7871BB6AE132C5AF367797CE5B18D3 /* SwiftSignatureView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSignatureView.debug.xcconfig; sourceTree = "<group>"; };
 		BD9548F7C31F50ADFE4D38D5C2DF5BE1 /* Pods-SwiftSignatureView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftSignatureView_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -74,25 +74,25 @@
 		CCA8AE6A15B07437002427AB2BB5560B /* Pods-SwiftSignatureView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftSignatureView_Example-umbrella.h"; sourceTree = "<group>"; };
 		D34DEFC5FD95C0C874A743E5EF1F1A2E /* Pods-SwiftSignatureView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftSignatureView_Tests-Info.plist"; sourceTree = "<group>"; };
 		DB1CB2344E2DB175590FA4A62B283F91 /* Pods-SwiftSignatureView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftSignatureView_Example-frameworks.sh"; sourceTree = "<group>"; };
-		E844A12841EFBB5E42B2DE0BFF23E0F4 /* Pods_SwiftSignatureView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSignatureView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E844A12841EFBB5E42B2DE0BFF23E0F4 /* Pods_SwiftSignatureView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftSignatureView_Tests.framework; path = "Pods-SwiftSignatureView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EAFA2BE2AFF6E7BB2C6DF3766ECD80 /* Pods-SwiftSignatureView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftSignatureView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F7B2A3FE6CDF85AB000887816392CA64 /* SwiftSignatureView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftSignatureView.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C081816FF829CEB7B1E832E11DABEA3 /* Frameworks */ = {
+		289F1D226698EEEBA0CA052CDECF1D84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90E2A5615FF5D775106E584207E107E /* Foundation.framework in Frameworks */,
+				BCDB3A46202BCFCFC8DD44449C0515DE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75328E00D6FE28E7276EFE53A55A4B12 /* Frameworks */ = {
+		81C54EE35A8FCB99D18624D868DE2854 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7502258414559D3F3F2C767190745003 /* Foundation.framework in Frameworks */,
+				E84BE75B4F72E0C01EF77C968B1588B0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,11 +237,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6065C648D3FA1FA7C4790BB628AC3AF6 /* Headers */ = {
+		622AF530820F86255A2B01D359EEE6C7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8838FA223393F8D1D0BFAA659EA6AB0 /* Pods-SwiftSignatureView_Example-umbrella.h in Headers */,
+				5F2F10F7DF1560019840EF16EE4D2A9E /* Pods-SwiftSignatureView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F60628DEC24BB552105784734CF2E42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97193D978BDB057FB5E8097BFBDD4986 /* Pods-SwiftSignatureView_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,14 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B8487DB3B876FBA7EADE3748DB1590 /* SwiftSignatureView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EF5246066D5F5F890B9B893D2361E649 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD13FF1A4EC6EFA4F42F0F95CEA97178 /* Pods-SwiftSignatureView_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,17 +284,17 @@
 		};
 		7E16DC51BB21EA071979CA2E733CBB17 /* Pods-SwiftSignatureView_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0C5DF24FBBB3FA4DE6B7E50E9254605 /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Tests" */;
+			buildConfigurationList = DB54B7C6D709E46F65FF34038A45643D /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Tests" */;
 			buildPhases = (
-				EF5246066D5F5F890B9B893D2361E649 /* Headers */,
-				A0A9365D313119BD3BCD69C3F211D480 /* Sources */,
-				75328E00D6FE28E7276EFE53A55A4B12 /* Frameworks */,
-				4C7C2F2E1908CFA1539201AC8793FBA0 /* Resources */,
+				622AF530820F86255A2B01D359EEE6C7 /* Headers */,
+				80B0B04BA4E5F184101CA59631C4F3A4 /* Sources */,
+				289F1D226698EEEBA0CA052CDECF1D84 /* Frameworks */,
+				624150811F8FCF025648982563A1DD06 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D6E91E9CB15616ECBB4950D25EEC7780 /* PBXTargetDependency */,
+				0168C2CA82E5F57B96154CB0BD277867 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftSignatureView_Tests";
 			productName = "Pods-SwiftSignatureView_Tests";
@@ -303,17 +303,17 @@
 		};
 		825930FCC3698C45E3026D62C50D369D /* Pods-SwiftSignatureView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D23A304D389A054DF7B8BD5421C1F2A /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Example" */;
+			buildConfigurationList = E9F3AF1A8B22EF793184868F113DA0FC /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Example" */;
 			buildPhases = (
-				6065C648D3FA1FA7C4790BB628AC3AF6 /* Headers */,
-				D93DBFF74C6B882D0CDF5E2C27BB4A30 /* Sources */,
-				3C081816FF829CEB7B1E832E11DABEA3 /* Frameworks */,
-				96DA0517A1AAE43E6DDA81AE1AB26E4A /* Resources */,
+				7F60628DEC24BB552105784734CF2E42 /* Headers */,
+				B589BBF9A4690C7A7890FBF9ECE4B8CC /* Sources */,
+				81C54EE35A8FCB99D18624D868DE2854 /* Frameworks */,
+				6B5C865258641E7466AFFEB7E744F55B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0B4B9BAD45D0E12B15F289A2C29CD6E1 /* PBXTargetDependency */,
+				301E009A7C3B5124A02E315FD4610265 /* PBXTargetDependency */,
 			);
 			name = "Pods-SwiftSignatureView_Example";
 			productName = "Pods-SwiftSignatureView_Example";
@@ -327,7 +327,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -350,14 +350,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C7C2F2E1908CFA1539201AC8793FBA0 /* Resources */ = {
+		624150811F8FCF025648982563A1DD06 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96DA0517A1AAE43E6DDA81AE1AB26E4A /* Resources */ = {
+		6B5C865258641E7466AFFEB7E744F55B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,6 +374,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		80B0B04BA4E5F184101CA59631C4F3A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C5905A75D18469D4A8B1816275A7219 /* Pods-SwiftSignatureView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EE0C15395A5CE2A893CD1F483DFF1F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,44 +394,74 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0A9365D313119BD3BCD69C3F211D480 /* Sources */ = {
+		B589BBF9A4690C7A7890FBF9ECE4B8CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C3827197C6DB4EED9963A0D550FC026 /* Pods-SwiftSignatureView_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D93DBFF74C6B882D0CDF5E2C27BB4A30 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46E54C2D37C973A9F26C556E6EF13AF4 /* Pods-SwiftSignatureView_Example-dummy.m in Sources */,
+				053CE5DF08656622B1DE7FB4169C0AB5 /* Pods-SwiftSignatureView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0B4B9BAD45D0E12B15F289A2C29CD6E1 /* PBXTargetDependency */ = {
+		0168C2CA82E5F57B96154CB0BD277867 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftSignatureView;
 			target = 77FF5E066D2B1955FFA0177ECFA4DF75 /* SwiftSignatureView */;
-			targetProxy = 83AB3B285732BAA0000DB798B5EAC289 /* PBXContainerItemProxy */;
+			targetProxy = F0A7BC2590EF2297D13EB3F6283CE3B3 /* PBXContainerItemProxy */;
 		};
-		D6E91E9CB15616ECBB4950D25EEC7780 /* PBXTargetDependency */ = {
+		301E009A7C3B5124A02E315FD4610265 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftSignatureView;
 			target = 77FF5E066D2B1955FFA0177ECFA4DF75 /* SwiftSignatureView */;
-			targetProxy = 2F09A63C040AEA872C621429BF1C6023 /* PBXContainerItemProxy */;
+			targetProxy = F08104369CB705B4028712D9019FB4EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07192AA0BCB4E1E1D111CF86E764A9E6 /* Release */ = {
+		07C0DCC8110D29560C5AFC17F010D77A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52DC7998DBC5DDA1ABB3E87170B3F98 /* SwiftSignatureView.release.xcconfig */;
+			baseConfigurationReference = F2EAFA2BE2AFF6E7BB2C6DF3766ECD80 /* Pods-SwiftSignatureView_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftSignatureView_Example/Pods-SwiftSignatureView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftSignatureView_Example/Pods-SwiftSignatureView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		08A460034103F53CE395C4A9BD99CBE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA7871BB6AE132C5AF367797CE5B18D3 /* SwiftSignatureView.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -436,7 +474,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftSignatureView/SwiftSignatureView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftSignatureView/SwiftSignatureView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SwiftSignatureView/SwiftSignatureView.modulemap";
 				PRODUCT_MODULE_NAME = SwiftSignatureView;
@@ -444,7 +482,40 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0.1;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0B046ECC55B9AF61EC50486A0CA5FBAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52DC7998DBC5DDA1ABB3E87170B3F98 /* SwiftSignatureView.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSignatureView/SwiftSignatureView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSignatureView/SwiftSignatureView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSignatureView/SwiftSignatureView.modulemap";
+				PRODUCT_MODULE_NAME = SwiftSignatureView;
+				PRODUCT_NAME = SwiftSignatureView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -452,11 +523,13 @@
 			};
 			name = Release;
 		};
-		48E4B3E293D6D697DA6F355F96E8F454 /* Debug */ = {
+		8BA3AC7907C16AF211B77F8CAA15A20C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DCB2D0A57BFA6EBEF38750E12653515 /* Pods-SwiftSignatureView_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -485,7 +558,7 @@
 			};
 			name = Debug;
 		};
-		60A7F9B4A8E92A5B16CC2AA887D9FE07 /* Release */ = {
+		A8E9EAEF6FED0654E2FF2AFA285F7F0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -511,7 +584,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -519,7 +591,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -535,22 +606,60 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		790102518DC069A99EBAD7B5468C7932 /* Release */ = {
+		D668F1E09DD1F36491D7064FA1672A67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE64162AA8AC53C41CC719B0AFD2CBF /* Pods-SwiftSignatureView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SwiftSignatureView_Tests/Pods-SwiftSignatureView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftSignatureView_Tests/Pods-SwiftSignatureView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E0B6A20A74CB0356E06B92AFE83A6D3A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7011A83ED336C222BFE89D1E5A80E267 /* Pods-SwiftSignatureView_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -580,7 +689,7 @@
 			};
 			name = Release;
 		};
-		7E1F3D358966F24610AD782F313B4C40 /* Debug */ = {
+		F6E534E68CDF06E11F153EA890CC3D4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -606,7 +715,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -614,7 +722,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -633,7 +740,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -646,112 +753,14 @@
 			};
 			name = Debug;
 		};
-		A0767461D3D711818526E224047A8EB9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA7871BB6AE132C5AF367797CE5B18D3 /* SwiftSignatureView.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftSignatureView/SwiftSignatureView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftSignatureView/SwiftSignatureView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftSignatureView/SwiftSignatureView.modulemap";
-				PRODUCT_MODULE_NAME = SwiftSignatureView;
-				PRODUCT_NAME = SwiftSignatureView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C333555131EA3EA4D16B01A3565ABCD7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2EAFA2BE2AFF6E7BB2C6DF3766ECD80 /* Pods-SwiftSignatureView_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftSignatureView_Example/Pods-SwiftSignatureView_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftSignatureView_Example/Pods-SwiftSignatureView_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DEECC68D7D53AC7D741D9804697171C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DE64162AA8AC53C41CC719B0AFD2CBF /* Pods-SwiftSignatureView_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SwiftSignatureView_Tests/Pods-SwiftSignatureView_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SwiftSignatureView_Tests/Pods-SwiftSignatureView_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E1F3D358966F24610AD782F313B4C40 /* Debug */,
-				60A7F9B4A8E92A5B16CC2AA887D9FE07 /* Release */,
+				F6E534E68CDF06E11F153EA890CC3D4E /* Debug */,
+				A8E9EAEF6FED0654E2FF2AFA285F7F0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -759,26 +768,26 @@
 		69733E04D020431DFA642C26E059F3AF /* Build configuration list for PBXNativeTarget "SwiftSignatureView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0767461D3D711818526E224047A8EB9 /* Debug */,
-				07192AA0BCB4E1E1D111CF86E764A9E6 /* Release */,
+				08A460034103F53CE395C4A9BD99CBE5 /* Debug */,
+				0B046ECC55B9AF61EC50486A0CA5FBAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D23A304D389A054DF7B8BD5421C1F2A /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Example" */ = {
+		DB54B7C6D709E46F65FF34038A45643D /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48E4B3E293D6D697DA6F355F96E8F454 /* Debug */,
-				C333555131EA3EA4D16B01A3565ABCD7 /* Release */,
+				D668F1E09DD1F36491D7064FA1672A67 /* Debug */,
+				E0B6A20A74CB0356E06B92AFE83A6D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0C5DF24FBBB3FA4DE6B7E50E9254605 /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Tests" */ = {
+		E9F3AF1A8B22EF793184868F113DA0FC /* Build configuration list for PBXNativeTarget "Pods-SwiftSignatureView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DEECC68D7D53AC7D741D9804697171C2 /* Debug */,
-				790102518DC069A99EBAD7B5468C7932 /* Release */,
+				8BA3AC7907C16AF211B77F8CAA15A20C /* Debug */,
+				07C0DCC8110D29560C5AFC17F010D77A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
