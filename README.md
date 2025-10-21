@@ -135,7 +135,7 @@ Add the following lines to your Package.swift file (or just use the Package Mana
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "3.2.4")
+    .package(url: "https://github.com/alankarmisra/SwiftSignatureView.git", from: "3.2.5")
 ]
 ```
 
