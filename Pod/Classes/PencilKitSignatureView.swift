@@ -103,9 +103,7 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     }
     
     open var isEmpty: Bool {
-        get {
-            canvas.drawing.bounds.isEmpty
-        }
+        canvas.drawing.bounds.isEmpty
     }
     
     open func clear(cache: Bool) {
@@ -119,7 +117,15 @@ open class PencilKitSignatureView: UIView, ISignatureView {
     open func redo() {
         canvas.undoManager?.redo()
     }
-    
+
+    open var canUndo: Bool {
+        canvas.undoManager?.canUndo ?? false
+    }
+
+    open var canRedo: Bool {
+        canvas.undoManager?.canRedo ?? false
+    }
+
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
@@ -188,9 +194,9 @@ open class PencilKitSignatureView: UIView, ISignatureView {
 
 @available(iOS 13.0, *)
 extension PencilKitSignatureView: PKCanvasViewDelegate {
-    
-    public func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+
+    public func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
         delegate?.swiftSignatureViewDidDraw(self)
     }
-    
+
 }
