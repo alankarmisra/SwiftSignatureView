@@ -8,6 +8,7 @@
 
 import UIKit
 import PencilKit
+import SwiftUI
 
 public protocol ISignatureView: AnyObject {
     var delegate: SwiftSignatureViewDelegate? { get set }
@@ -215,6 +216,7 @@ open class SwiftSignatureView: UIView, ISignatureView {
 
 }
 
+@available(iOS 17.0, *)
 #Preview {
     SwiftSignatureView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
 }
