@@ -9,7 +9,7 @@ SwiftSignatureView is a lightweight, fast and customizable option for capturing 
 
 <img width="432" height="243" alt="swiftsignatureview" src="https://github.com/user-attachments/assets/c3601521-8d80-419a-9e7e-5d961f3d0425" />
 
-## Version 3.2.7
+## Version 3.2.8
 - Updated Package.swift to use iOS 17.
 
 ## Version 3.2.5
