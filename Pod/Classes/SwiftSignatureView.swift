@@ -24,6 +24,8 @@ public protocol ISignatureView: AnyObject {
     func clear(cache: Bool)
     func undo()
     func redo()
+    var canUndo: Bool { get }
+    var canRedo: Bool { get }
     func getCroppedSignature() -> UIImage?
 }
 
@@ -165,6 +167,14 @@ open class SwiftSignatureView: UIView, ISignatureView {
 
     public func redo() {
         instance.redo()
+    }
+
+    public var canUndo: Bool {
+        instance.canUndo
+    }
+
+    public var canRedo: Bool {
+        instance.canRedo
     }
 
     /**

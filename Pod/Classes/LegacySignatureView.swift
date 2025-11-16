@@ -149,6 +149,14 @@ open class LegacySwiftSignatureView: UIView, UIGestureRecognizerDelegate, ISigna
         self.redraw()
     }
 
+    open var canUndo: Bool {
+        cacheIndex > 0
+    }
+
+    open var canRedo: Bool {
+        cacheIndex < cachedPath.count
+    }
+
     // MARK: Private Methods
     fileprivate var previousPoint = CGPoint.zero
     fileprivate var previousEndPoint = CGPoint.zero
